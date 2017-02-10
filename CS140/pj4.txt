@@ -1,0 +1,462 @@
+Script started on Tue 10 Nov 2015 08:00:39 AM PST
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m pwd
+/user/gmleach/cs140/project
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m ls-l
+bash: ls-l: command not found
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m ls -l
+total 61
+-rw------- 1 gmleach cpp  2625 Oct 21 19:42 Bill.class
+-rw------- 1 gmleach cpp  3677 Oct 20 20:38 Bill.java
+-rw------- 1 gmleach cpp   176 Oct 19 09:01 Bill.java.save
+-rw------- 1 gmleach cpp  1003 Oct  3 21:58 Pay.class
+-rw-r--r-- 1 gmleach cpp   975 Oct  3 21:57 Pay.java
+-rw------- 1 gmleach cpp  2825 Nov 10 07:58 SlotMachineSimulation.class
+-rw------- 1 gmleach cpp  4201 Nov 10 07:57 SlotMachineSimulation.java
+-rw------- 1 gmleach cpp   982 Oct 12 09:51 TimeConversionToHMS.class
+-rw------- 1 gmleach cpp   683 Oct 12 09:42 TimeConversionToHMS.java
+-rw------- 1 gmleach cpp  1043 Oct 12 09:49 TimeConversionToSecond.class
+-rw------- 1 gmleach cpp   738 Oct 11 10:25 TimeConversionToSecond.java
+-rw------- 1 gmleach cpp  2198 Oct  3 22:01 [0m[00;32mpj1.txt[0m
+-rw------- 1 gmleach cpp  6439 Oct 12 09:52 [00;32mpj2.txt[0m
+-rw------- 1 gmleach cpp 12602 Oct 21 19:49 [00;32mpj3.txt[0m
+-rw------- 1 gmleach cpp     0 Nov 10 08:00 [00;32mpj4.txt[0m
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m cat SlotMachineSimulation.java
+// Genevieve Leach
+// CS 140, Section 1
+// Project 4 - Slot Machine Simulation
+// 9 November 2015
+
+import java.util.*;
+
+public class SlotMachineSimulation
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      Random randInt = new Random();
+      
+      final int MAX_RAND_NUMBER=6;
+      
+      Double winnings=0.0, totalWinnings=0.0, totalBet=0.0, betAmount=0.0;
+      String playAgain, pic1="", pic2="", pic3="";
+      int value1, value2, value3;
+
+      System.out.println("Welcome to the Slot Machine Simulation.");
+      System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+      do
+      {
+         System.out.print("\nEnter the amount you would like to bet: $");
+         betAmount = kb.nextDouble();
+         while (betAmount<=0)
+         {
+            System.out.print("You must bet something! Please enter a valid bet: $");
+            betAmount = kb.nextDouble();
+         }
+         totalBet+=betAmount;
+         System.out.println();
+         value1 = randInt.nextInt(MAX_RAND_NUMBER);
+         value2 = randInt.nextInt(MAX_RAND_NUMBER);
+         value3 = randInt.nextInt(MAX_RAND_NUMBER);
+         switch(value1)
+         {
+            case 0:
+               pic1="Cherries";
+               break;
+            case 1:
+               pic1="Oranges";
+               break;
+            case 2:
+               pic1="Plums";
+               break;
+            case 3:
+               pic1="Bells";
+               break;
+            case 4:
+               pic1="Melons";
+               break;
+            case 5:
+               pic1="Bars";
+               break;
+         }
+         switch(value2)
+         {
+            case 0:
+               pic2="Cherries";
+               break;
+            case 1:
+               pic2="Oranges";
+               break;
+            case 2:
+               pic2="Plums";
+               break;
+            case 3:
+               pic2="Bells";
+               break;
+            case 4:
+               pic2="Melons";
+               break;
+            case 5:
+               pic2="Bars";
+               break;
+         }
+         switch(value3)
+         {
+            case 0:
+               pic3="Cherries";
+               break;
+            case 1:
+               pic3="Oranges";
+               break;
+            case 2:
+               pic3="Plums";
+               break;
+            case 3:
+               pic3="Bells";
+               break;
+            case 4:
+               pic3="Melons";
+               break;
+            case 5:
+               pic3="Bars";
+               break;
+         } 
+         System.out.printf("- %s -- %s -- %s -\n", pic1, pic2, pic3);
+         System.out.println();
+         if (value1==value2 &&  value2==value3)
+         {
+            winnings = betAmount*3;
+            System.out.print("Wow! All three match!\nThat triples your" 
+                             +" bet!\nYou win $"); 
+            System.out.printf("%,.2f\n", winnings);
+            totalWinnings += winnings;
+         }
+         else if (value1==value2 || value1==value3 || value2==value3)  
+         {
+            winnings = betAmount*2;
+            System.out.print("Great! Two match.\nThat doubles your bet!"
+                             +"\nYou win $");
+            System.out.printf("%,.2f\n", winnings);
+            totalWinnings+=winnings;
+         }
+         else
+         {
+            System.out.print("Sorry, none match...\nYou win $");
+            System.out.printf("%,.2f\n", betAmount*0);
+         }
+         System.out.println();
+         System.out.println("Would you like to play again?");
+         kb.nextLine();
+         System.out.print("Enter Y for yes or N for no: ");
+         playAgain = kb.nextLine();
+         while (!playAgain.equalsIgnoreCase("Y") &&
+               !playAgain.equalsIgnoreCase("N"))
+         {
+            System.out.print("Invalid answer!\nEnter Y for yes or N for"
+                             + " no: ");
+            playAgain = kb.nextLine();
+         }            
+      } while (playAgain.equalsIgnoreCase("Y"));
+      System.out.printf("\nYou bet a total of $%,.2f", totalBet);
+      System.out.printf("\nYou won a total of $%,.2f\n", totalWinnings);
+   }
+}
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m javac SlotMachineSimulation.jav a
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m [K[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java SlotMachineSimulation.[K
+Welcome to the Slot Machine Simulation.
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Enter the amount you would like to bet: $0
+You must bet something! Please enter a valid bet: $5
+
+- Cherries -- Plums -- Bells -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: u
+Invalid answer!
+Enter Y for yes or N for no: t
+Invalid answer!
+Enter Y for yes or N for no: Y
+
+Enter the amount you would like to bet: $5
+
+- Oranges -- Plums -- Bars -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $0.01
+
+- Bars -- Plums -- Plums -
+
+Great! Two match.
+That doubles your bet!
+You win $0.02
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $-1
+You must bet something! Please enter a valid bet: $4
+
+- Cherries -- Bars -- Cherries -
+
+Great! Two match.
+That doubles your bet!
+You win $8.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $7 5
+
+- Melons -- Plums -- Bars -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $10000000
+
+- Bells -- Plums -- Bars -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $200000
+
+- Oranges -- Oranges -- Oranges -
+
+Wow! All three match!
+That triples your bet!
+You win $600,000.00
+
+Would you like to play again?
+Enter Y for yes or N for no: n b
+Invalid answer!
+Enter Y for yes or N for no:  
+Invalid answer!
+Enter Y for yes or N for no: m
+Invalid answer!
+Enter Y for yes or N for no: n
+
+You bet a total of $10,200,019.01
+You won a total of $600,008.02
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m [K[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m y[Kjava SlotMachineSimulation.[K
+Welcome to the Slot Machine Simulation.
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Enter the amount you would like to bet: $20000000
+
+- Melons -- Plums -- Oranges -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $99999999999
+
+- Plums -- Bars -- Oranges -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $99999999999999
+
+- Cherries -- Plums -- Cherries -
+
+Great! Two match.
+That doubles your bet!
+You win $199,999,999,999,998.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $2
+
+- Bars -- Oranges -- Oranges -
+
+Great! Two match.
+That doubles your bet!
+You win $4.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $3
+
+- Bars -- Oranges -- Melons -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $6
+
+- Melons -- Bars -- Melons -
+
+Great! Two match.
+That doubles your bet!
+You win $12.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $1
+
+- Cherries -- Plums -- Oranges -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $0.1
+
+- Bars -- Plums -- Cherries -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: n
+
+You bet a total of $100,100,020,000,010.10
+You won a total of $200,000,000,000,014.00
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java SlotMachineSimulation
+Welcome to the Slot Machine Simulation.
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Enter the amount you would like to bet: $.01
+
+- Bars -- Plums -- Oranges -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $.01
+
+- Cherries -- Melons -- Bars -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: . y
+
+Enter the amount you would like to bet: $.01
+
+- Melons -- Cherries -- Oranges -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y. 
+
+Enter the amount you would like to bet: $.01
+
+- Bells -- Oranges -- Oranges -
+
+Great! Two match.
+That doubles your bet!
+You win $0.02
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $.01
+
+- Plums -- Oranges -- Bars -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $.01
+
+- Bars -- Plums -- Bars -
+
+Great! Two match.
+That doubles your bet!
+You win $0.02
+
+Would you like to play again?
+Enter Y for yes or N for no: . y
+
+Enter the amount you would like to bet: $.01
+
+- Bells -- Plums -- Plums -
+
+Great! Two match.
+That doubles your bet!
+You win $0.02
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $.01
+
+- Bells -- Plums -- Melons -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $.01
+
+- Plums -- Oranges -- Bells -
+
+Sorry, none match...
+You win $0.00
+
+Would you like to play again?
+Enter Y for yes or N for no: y
+
+Enter the amount you would like to bet: $. 5
+
+- Bells -- Bells -- Oranges -
+
+Great! Two match.
+That doubles your bet!
+You win $10.00
+
+Would you like to play again?
+Enter Y for yes or N for no: N
+
+You bet a total of $5.09
+You won a total of $10.06
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m exit
+exit
+
+Script done on Tue 10 Nov 2015 08:03:48 AM PST
