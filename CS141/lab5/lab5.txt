@@ -1,0 +1,43 @@
+Script started on Tue 01 Mar 2016 12:12:11 PM PST
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m javac File IOTest.java
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m cat animals.txt
+Elephant
+Butterfly
+Angelfish
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m java FileIOTest.java[K[K[K[K[K
+I will demonstrate fileRead.
+Elephant
+Butterfly
+Angelfish
+
+I will demonstrate fileRead with a File.
+Elephant
+Butterfly
+Angelfish
+
+I will demonstrate fileWrite.
+Array written to file.
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m cat animals.txt
+Boar
+Snail
+Roly Poly
+Armadillo
+Jaguar
+End of additions.
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m rm animals.txt
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m ls
+FileIO.class  FileIOSubClass.class  FileIOSubClass.java.save  FileIOTest.java
+FileIO.java   FileIOSubClass.java   FileIOTest.class          [0m[00;32mlab5.txt[0m
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m java FileIOTest
+I will demonstrate fileRead.
+File not found.
+
+I will demonstrate fileRead with a File.
+File not found.
+
+I will demonstrate fileWrite.
+Array written to file.
+]0;gmleach@fluffy:~/cs141/lab5 [01;32mgmleach@fluffy[01;34m ~/cs141/lab5 $[00m exit
+exit
+
+Script done on Tue 01 Mar 2016 12:14:07 PM PST

@@ -1,0 +1,33 @@
+public class FileIOSubClass extends FileIO
+{
+   public void fileRead(String s)
+   {
+      try
+      {
+         
+      }
+      catch(Exception e)
+      {
+         System.out.println("Error: File " + s + " not found!");
+         System.exit(0);
+      }
+   }
+
+   public void fileRead(File f)
+   {
+      try
+      {
+         
+      }
+      catch(Exception e)
+      {
+         System.out.println("Error: File " + s + " not found!");
+         System.exit(0);
+      }
+   }
+
+   public void fileWrite(String s, String[] a)
+   {
+      
+   }
+}
