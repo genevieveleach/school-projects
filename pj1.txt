@@ -1,0 +1,62 @@
+Script started on Sat 03 Oct 2015 09:58:11 PM PDT
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m pwd
+/user/gmleach/cs140/project
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m ls
+Pay.class  Pay.java  [0m[00;32mpj1.txt[0m
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m cat Pay.java
+//Genevieve Leach
+//CS 140, Section 1
+//Project 1 - Payroll Program
+//3 October 2015
+
+//This program calculates the user's gross pay
+
+import java.util.Scanner;  //to be able to read from the keyboard
+
+public class Pay
+{
+   public static void main(String [] args)
+   {
+
+      //create a Scanner object to read from the keyboard 
+      Scanner keyboard = new Scanner(System.in);
+
+      //identifier declarations
+      double hours;	//number of hours worked
+      double rate;	//hourly pay rate
+      double pay;	//gross pay
+
+      //display prompts and get input
+      System.out.print("How many hours did you work? ");
+      hours = keyboard.nextDouble();
+      System.out.print("How much do you get paid per hour? ");
+      rate = keyboard.nextDouble();
+
+      //calculations
+      if(hours <= 40)
+         pay = hours * rate;
+      else
+         pay = (hours - 40) * (1.5 * rate) + 40 * rate;
+
+      //display results
+      System.out.println("You earned $" + pay);
+   }
+}
+
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m javac p[KPay.java
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m java Pay
+How many hours did you work? 20
+How much do you get paid per hour? 9
+You earned $180.0
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m java Pay
+How many hours did you work? 40
+How much do you get paid per hour? 15
+You earned $600.0
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m java Pay
+How many hours did you work? 45
+How much do you get paid per hour? 20
+You earned $950.0
+]0;gmleach@fluffy:~/cs140/project[01;32mgmleach@fluffy[01;34m ~/cs140/project $[00m exit
+exit
+
+Script done on Sat 03 Oct 2015 09:58:50 PM PDT
