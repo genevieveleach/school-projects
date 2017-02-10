@@ -1,0 +1,154 @@
+Script started on Mon 12 Oct 2015 09:48:53 AM PDT
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m pwd
+/user/gmleach/cs140/project
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m ls -l
+total 14
+-rw------- 1 gmleach cpp 1003 Oct  3 21:58 Pay.class
+-rw-r--r-- 1 gmleach cpp  975 Oct  3 21:57 Pay.java
+-rw------- 1 gmleach cpp  982 Oct 12 09:42 TimeConversionToHMS.class
+-rw------- 1 gmleach cpp  683 Oct 12 09:42 TimeConversionToHMS.java
+-rw------- 1 gmleach cpp 1043 Oct 11 10:25 TimeConversionToSecond.class
+-rw------- 1 gmleach cpp  738 Oct 11 10:25 TimeConversionToSecond.java
+-rw------- 1 gmleach cpp 2198 Oct  3 22:01 [0m[00;32mpj1.txt[0m
+-rw------- 1 gmleach cpp    0 Oct 12 09:48 [00;32mpj2.txt[0m
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m cat TimeConversionToSecond.java
+// Genevieve Leach
+// CS140, Section 1
+// Project 2 - Time Conversion
+// 11 October 2015
+
+import java.util.Scanner;
+
+public class TimeConversionToSecond
+{
+   public static void main(String[] args)
+   {
+      Scanner kb=new Scanner(System.in);
+      System.out.print("Enter hours: ");
+      int hours=kb.nextInt();
+      System.out.print("Enter minutes: ");
+      int minutes=kb.nextInt();
+      System.out.print("Enter seconds: ");
+      int seconds=kb.nextInt();
+
+      int totalSeconds=3600*hours+60*minutes+seconds;
+      
+      System.out.println(hours+" hours, "+minutes
+                         +" minutes, "+seconds
+                         +" seconds is equivalent to "
+                         +totalSeconds+" seconds.");
+   }
+}
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m javac TimeConversionToSecond.java[K[K[Kava
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 0
+Enter minutes: 0
+Enter seconds: 0
+0 hours, 0 minutes, 0 seconds is equivalent to 0 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 0
+Enter minutes: 1
+Enter seconds: 2
+0 hours, 1 minutes, 2 seconds is equivalent to 62 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 3
+Enter minutes: 0
+Enter seconds: 4
+3 hours, 0 minutes, 4 seconds is equivalent to 10804 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 5
+Enter minutes: 6
+Enter seconds: 0
+5 hours, 6 minutes, 0 seconds is equivalent to 18360 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 0
+Enter minutes: 0
+Enter seconds: 25
+0 hours, 0 minutes, 25 seconds is equivalent to 25 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 0
+Enter minutes: 25
+Enter seconds: 0
+0 hours, 25 minutes, 0 seconds is equivalent to 1500 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 25
+Enter minutes: 0
+Enter seconds: 0
+25 hours, 0 minutes, 0 seconds is equivalent to 90000 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 1
+Enter minutes: 28
+Enter seconds: 42
+1 hours, 28 minutes, 42 seconds is equivalent to 5322 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: 2
+Enter minutes: 46
+Enter seconds: 39
+2 hours, 46 minutes, 39 seconds is equivalent to 9999 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToSecond
+Enter hours: q0 00   100
+Enter minutes: 10
+Enter seconds: 1
+100 hours, 10 minutes, 1 seconds is equivalent to 360601 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m cat TimeConversionToHMS.java
+// Genevieve Leach
+// CS 140, Section 1
+// Project 2 - Time Conversion
+// 11 October 2015
+
+import java.util.Scanner;
+
+public class TimeConversionToHMS
+{
+   public static void main(String[] args)
+   {
+      Scanner kb=new Scanner(System.in);
+      System.out.print("Enter total seconds: ");
+      int totalSeconds=kb.nextInt();
+      
+      int hours=totalSeconds/3600;
+      int remainder=totalSeconds%3600;
+      int minutes=remainder/60;
+      int seconds=remainder%60;
+
+      System.out.println(totalSeconds
+                         +" seconds is equivalent to "
+                         +hours+" hours "+minutes+" minutes "
+                         +seconds+" seconds.");
+   }
+}
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m javac TimeConversionToHMS.java
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 0
+0 seconds is equivalent to 0 hours 0 minutes 0 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m 35[K[Kjava TimeConversionToHMS
+Enter total seconds: 35
+35 seconds is equivalent to 0 hours 0 minutes 35 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS [K
+Enter total seconds: 60
+60 seconds is equivalent to 0 hours 1 minutes 0 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 123
+123 seconds is equivalent to 0 hours 2 minutes 3 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 3600
+3600 seconds is equivalent to 1 hours 0 minutes 0 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 3661
+3661 seconds is equivalent to 1 hours 1 minutes 1 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 5322
+5322 seconds is equivalent to 1 hours 28 minutes 42 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 9999
+9999 seconds is equivalent to 2 hours 46 minutes 39 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 100 2030
+102030 seconds is equivalent to 28 hours 20 minutes 30 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m java TimeConversionToHMS
+Enter total seconds: 123456789
+123456789 seconds is equivalent to 34293 hours 33 minutes 9 seconds.
+[01;32mgmleach@garrison[01;34m ~/cs140/project $[00m exit
+exit
+
+Script done on Mon 12 Oct 2015 09:52:05 AM PDT
