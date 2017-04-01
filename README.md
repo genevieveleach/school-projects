@@ -3,7 +3,7 @@ A compilation of my school projects. Organized by class.
 
 CS 140 - Intro to Computer Science (Fall 2015)
 
-  .java files are the source files, pj[i].txt are the sample i/o to show how they work
+  .java files are the source files, pj[i].txt are the sample i/o to show how they work.
 
 
     pj1 - Pay.java
@@ -65,5 +65,11 @@ CS 256 - C++ Programming (Winter 2017)
     Project4/ - Circle.h, Rectangle.h, RightTriangle.h, Shape.h, Shape.cpp
 
 CS 264 - Computer Organization and Assembly Programming (Winter 2017)
+ 
+  lab[i].s are source code, lab[i].docx are code + example i/o. 
 
-    Labs/ - lab1.s, lab2.s, lab3.s, lab4.s, lab5.s
+    Labs/ - lab1.s, lab1.docx,
+            lab2.s, lab2.docx,
+            lab3.s, lab3.docx,
+            lab4.s, lab4.docx,
+            lab5.s, lab5.docx
