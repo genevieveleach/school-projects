@@ -2,6 +2,7 @@
 A compilation of my school projects. Organized by class.
 
 CS 140 - Intro to Computer Science (Fall 2015)
+
   .java files are the source files, pj[i].txt are the sample i/o to show how they work
 
 
@@ -16,6 +17,7 @@ CS 140 - Intro to Computer Science (Fall 2015)
     pj5 - Diamond.java
 
 CS 141 - Introduction to Programming and Problem-Solving (Winter 2016)
+
   Files I wrote are .java files within each lab folder, as well as within PA[i]/src folders.
   
     lab1 - Example.java
