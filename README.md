@@ -60,9 +60,9 @@ CS 256 - C++ Programming (Winter 2017)
   
     Project2/ - Zipcode.h, ZipCode.cpp
   
-    Project3/ - MenuAdd.cpp
+    Project3/ - MenuAdd.cpp                                                #currently missing
   
-    Project4/ - Circle.h, Rectangle.h, RightTriangle.h, Shape.h, Shape.cpp
+    Project4/ - Circle.h, Rectangle.h, RightTriangle.h, Shape.h, Shape.cpp #currently missing
 
 CS 264 - Computer Organization and Assembly Programming (Winter 2017)
  
