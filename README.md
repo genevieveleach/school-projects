@@ -55,18 +55,22 @@ CS 241 - Data Structures and Algorithms II (Fall 2016)
     Project3/src/ - LeachGp3.java
 
 CS 256 - C++ Programming (Winter 2017)
+    
+  Has not been uploaded yet; will get to it ASAP
 
     Project1/ - MemoryMatch.cpp
   
     Project2/ - Zipcode.h, ZipCode.cpp
   
-    Project3/ - MenuAdd.cpp                                                #currently missing
+    Project3/ - MenuAdd.cpp
   
-    Project4/ - Circle.h, Rectangle.h, RightTriangle.h, Shape.h, Shape.cpp #currently missing
+    Project4/ - Circle.h, Rectangle.h, RightTriangle.h, Shape.h, Shape.cpp
 
 CS 264 - Computer Organization and Assembly Programming (Winter 2017)
  
   lab[i].s are source code, lab[i].docx are code + example i/o. 
+  
+  Has not been uploaded yet; will get to it ASAP
 
     Labs/ - lab1.s, lab1.docx,
             lab2.s, lab2.docx,
