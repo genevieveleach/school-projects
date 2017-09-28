@@ -5,51 +5,44 @@ import java.net.Socket;
 
 public final class EchoServer {
 
-    private static ServerSocket serverSocket;
+    private static Socket socket;
 
     public static void main(String[] args) throws Exception {
 
         Runnable client = () -> {
-            {
-                try {
-                    while (true) {
-                        try (Socket socket = serverSocket.accept()) {
-                            String address = socket.getInetAddress().getHostAddress();
-                            System.out.printf("Client connected: %s%n", address);
-                            OutputStream os = socket.getOutputStream();
-                            PrintStream out = new PrintStream(os, true, "UTF-8");
-                            out.printf("Hi %s, thanks for connecting!%n", address);
+            try {
+                Socket clientSocket = socket;
+                String address = clientSocket.getInetAddress().getHostAddress();
+                System.out.printf("Client connected: %s%n", address);
+                OutputStream os = clientSocket.getOutputStream();
+                PrintStream out = new PrintStream(os, true, "UTF-8");
+                out.printf("Hi %s, thanks for connecting!%n", address);
 
-                            InputStream is = socket.getInputStream();
-                            InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-                            BufferedReader br = new BufferedReader(isr);
-                            String in = null;
-                            while (true) {
-                                in = br.readLine();
-                                if (in.trim().toLowerCase().equals("exit")) {
-                                    break;
-                                }
-                                out.println(in);
-                            }
-                            System.out.printf("Client disconnected: %s%n", address);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                InputStream is = clientSocket.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+                BufferedReader br = new BufferedReader(isr);
+                String in = null;
+                while (true) {
+                    in = br.readLine();
+                    if (in.trim().toLowerCase().equals("exit")) {
+                        break;
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    out.println(in);
                 }
+                System.out.printf("Client disconnected: %s%n", address);
+                clientSocket.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         };
 
-        serverSocket = new ServerSocket(22222);
-        try {
-            while (true) {
+        try(ServerSocket serverSocket = new ServerSocket(22222)) {
+            while(true) {
+                socket = serverSocket.accept();
                 Thread newClient = new Thread(client);
                 newClient.start();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
     }
 }
