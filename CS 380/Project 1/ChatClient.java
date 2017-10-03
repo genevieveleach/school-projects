@@ -20,18 +20,17 @@ public class ChatClient {
             try {
               String in;
               in = br.readLine();
-              if (in != null) {
-                if (in.trim().equals("Name in use.")) {
-                  System.out.println(in + " Please try another nickname.");
-                  System.exit(0);
-                } else if (in.trim().equals("Connection idle for 1 minute, closing connection.")) {
-                  System.out.println(in);
-                  System.exit(0);
-                }
+              if (in.trim().equals("Name in use.")) {
+                System.out.println(in + " Please try another nickname.");
+                System.exit(0);
+              } else if (in.trim().equals("Connection idle for 1 minute, closing connection.")) {
                 System.out.println(in);
-              } else {
-                // do nothing
+                System.exit(0);
+              } else if (in.trim().equals("Too fast!")) {
+                System.out.println(in);
+                System.exit(0);
               }
+              System.out.println(in);
             } catch (IOException e) {
               e.printStackTrace();
             }
