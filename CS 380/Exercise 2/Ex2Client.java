@@ -16,21 +16,17 @@ public class Ex2Client {
 
       int[] array = new int[100];
       byte[] bArray = new byte[100];
-      System.out.println("Connected to server.\nReceived bytes:");
+      System.out.print("Connected to server.\nReceived bytes:");
       for (int i = 0; i<array.length; i++) {
         int byteOne = br.read();
         int byteTwo = br.read();
         array[i] = (byteOne << 4) | byteTwo;
         if(i % 10 == 0) {
           //is beginning of line, format
-          System.out.print("\t");
+          System.out.print("\n\t");
         }
         //print byte
         System.out.printf("%02X",array[i]);
-        if((i + 1) % 10 == 0) {
-          //is end of line, new line
-          System.out.println();
-        }
         //add to byte array for CRC
         bArray[i] = (byte)array[i];
       }
