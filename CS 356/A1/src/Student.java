@@ -15,8 +15,19 @@ public class Student {
     return ID;
   }
 
+  public void setAnswer (ArrayList<Character> answer) {
+    // will override any previously submitted answers
+    answer.clear();
+    this.answer = answer;
+  }
+
+  private void clearAnswer() {
+    answer.clear();
+  }
+
   public ArrayList<Character> getAnswer() {
     return (ArrayList<Character>) answer;
   }
+
 
 }
