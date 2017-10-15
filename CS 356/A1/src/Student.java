@@ -1,18 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
   private String ID;
-  private int answer;
+  private List<Character> answer;
 
   public Student(String ID) {
     this.ID = ID;
-  }
-
-  public int getAnswer() {
-    return answer;
+    answer = new ArrayList<Character>();
   }
 
   public String getID() {
     return ID;
+  }
+
+  public ArrayList<Character> getAnswer() {
+    return (ArrayList<Character>) answer;
   }
 
 }
