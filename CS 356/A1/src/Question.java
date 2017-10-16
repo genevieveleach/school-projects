@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Question {
 
@@ -26,6 +27,15 @@ public class Question {
 
   public String getPrompt() {
     return prompt;
+  }
+
+  // sets answer choices. choices can be strings, separated by ';'
+  // they will be labeled by the first character of each string.
+  public void setPossibleAnswers(String possibleAnswers) {
+    StringTokenizer st = new StringTokenizer(possibleAnswers, ";");
+    while (st.hasMoreTokens()) {
+      this.possibleAnswers.add(st.nextToken());
+    }
   }
 
   public void setPossibleAnswers(List<String> possibleAnswers) {
