@@ -5,7 +5,7 @@ public class IVoteService implements IVote {
   private Question question;
   private List<Student> students;
 
-  public IVoteService() {
+  IVoteService() {
     students = new ArrayList<>();
   }
 
@@ -37,13 +37,9 @@ public class IVoteService implements IVote {
   }
 
   public boolean questionNotSetCheck() {
-    if (question == null) {
-      return true;
-    }
-    return false;
+    return question == null;
   }
 
-  //TODO: fix correct results count
   public String getCorrectResults() {
     String results = "";
     if (questionNotSetCheck()) {
@@ -56,7 +52,7 @@ public class IVoteService implements IVote {
       for (Student student : students) {
         ArrayList<Character> list = student.getAnswer();
         for (Character ans : list) {
-          char a = (char) ans;
+          char a = ans;
           if (a == correctAnswer) {
             count++;
           }
@@ -65,17 +61,17 @@ public class IVoteService implements IVote {
       return (results + "{" + correctAnswer + "=" + count + "}");
     } else {
       List<Character> correctAnswers = question.getCorrectAnswers();
-      Map<Character, Integer> correctAnswerDistribution = new HashMap<Character, Integer>();
+      Map<Character, Integer> correctAnswerDistribution = new HashMap<>();
       for (Student student : students) {
         ArrayList<Character> list = student.getAnswer();
-        for (Character ans : list) {
-          if (correctAnswers.contains(ans)) {
-            if (correctAnswerDistribution.containsValue(ans)) {
-              int count = correctAnswerDistribution.get(ans);
+        for (char c : list) {
+          if (correctAnswers.contains(c)) {
+            if (correctAnswerDistribution.get(c) != null) {
+              int count = correctAnswerDistribution.get(c);
               count++;
-              correctAnswerDistribution.put(ans, count);
+              correctAnswerDistribution.put(c, count);
             } else {
-              correctAnswerDistribution.put(ans, 1);
+              correctAnswerDistribution.put(c, 1);
             }
           }
         }
@@ -88,7 +84,7 @@ public class IVoteService implements IVote {
     if(questionNotSetCheck()) {
       return "Question not set; could not return number of results.";
     }
-    Map<Character, Integer> results = new HashMap<Character, Integer>();
+    Map<Character, Integer> results = new HashMap<>();
     for (Student student : students) {
       ArrayList<Character> answers = student.getAnswer();
       for(char answer : answers) {
@@ -104,8 +100,8 @@ public class IVoteService implements IVote {
   }
 
   public void setAnswer (Student student, String ans) {
-    List<Character> answer = new ArrayList<Character>();
-    StringTokenizer st = new StringTokenizer(ans, ",. ");
+    List<Character> answer = new ArrayList<>();
+    StringTokenizer st = new StringTokenizer(ans, ",. ;");
     // if it's a single choice question vs a multiple choice question
     if (question.getQuestionType() == 0) {
       char a = st.nextToken().trim().charAt(0);

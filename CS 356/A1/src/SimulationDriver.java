@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class SimulationDriver {
@@ -10,6 +11,12 @@ public class SimulationDriver {
     iVote = new IVoteService();
     Scanner kb = new Scanner(System.in);
     Random rand = new Random();
+    try {
+      FileWriter fw = new FileWriter(new File("results.txt"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
 
     //creates a random amount of students for the classroom and their IDs
     int numStudents = rand.nextInt(30);
@@ -36,6 +43,7 @@ public class SimulationDriver {
         questionType = kb.nextInt();
       } while(questionTypeCheck(questionType));
       kb.nextLine();
+
       // Set question prompt
       System.out.print("What is the question prompt?: ");
       String prompt = kb.nextLine();
@@ -62,9 +70,9 @@ public class SimulationDriver {
         question.setCorrectAnswer(kb.nextLine().trim().charAt(0));
       } else {
         System.out.print("What are the correct answers? Please type the first character of the line of each of the " +
-            "correct answers, case sensitive, separated by commas, spaces, or periods.: ");
+            "correct answers, case sensitive, separated by semicolons.: ");
         try {
-          question.setCorrectAnswers(kb.nextLine());
+          question.setCorrectAnswers(kb.nextLine().trim());
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -128,10 +136,9 @@ public class SimulationDriver {
   }
 
   private static ArrayList<Character> generateRandomAnswer(List<String> possibleAnswers, int questionType) {
-    List<Character> randomAnswer = new ArrayList<Character>();
+    List<Character> randomAnswer = new ArrayList<>();
     String answers = "";
-    for (Iterator<String> it = possibleAnswers.iterator(); it.hasNext(); ) {
-      String choices = it.next();
+    for (String choices : possibleAnswers) {
       answers += choices.charAt(0);
     }
     Random rand = new Random();
@@ -159,7 +166,7 @@ public class SimulationDriver {
 
   //creates a random student ID of 5 characters
   private static String createRandomID() {
-    String randID = "";
+    String randID;
     Random rand = new Random();
     char[] characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
     StringBuilder sb = new StringBuilder();

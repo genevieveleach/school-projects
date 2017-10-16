@@ -10,8 +10,8 @@ public class SingleAnswer extends Question {
     super(0);
   }
 
-  public SingleAnswer(String prompt) {
-    super(1, prompt);
+  SingleAnswer(String prompt) {
+    super(0, prompt);
   }
 
   public void setCorrectAnswer(char correctAnswer) {
@@ -39,7 +39,7 @@ public class SingleAnswer extends Question {
   }
 
   List<Character> getCorrectAnswers() {
-    List<Character> list = new ArrayList<Character>();
+    List<Character> list = new ArrayList<>();
     list.add(getCorrectAnswer());
     return list;
   }
