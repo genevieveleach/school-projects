@@ -3,6 +3,7 @@ import java.util.*;
 
 public class SimulationDriver {
 
+  //change bool to false if you want keyboard input, true if file input from "input.txt"
   private static final boolean FILE_READ = true;
   private static IVoteService iVote;
 
