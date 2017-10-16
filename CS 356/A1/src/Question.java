@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Question {
+public abstract class Question {
 
   private int questionType;
   private String prompt;
@@ -16,6 +16,10 @@ public class Question {
     this.questionType = questionType;
     this.prompt = prompt;
   }
+  abstract void setCorrectAnswer(char correctAnswer);
+  abstract void setCorrectAnswers(String correctAnswers);
+  abstract char getCorrectAnswer();
+  abstract List<Character> getCorrectAnswers();
 
   public int getQuestionType() {
     return questionType;

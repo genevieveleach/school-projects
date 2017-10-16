@@ -21,7 +21,7 @@ public class Student {
     this.answer = answer;
   }
 
-  private void clearAnswer() {
+  public void clearAnswer() {
     answer.clear();
   }
 
