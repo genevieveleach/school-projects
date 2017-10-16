@@ -1,14 +1,21 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class SimulationDriver {
 
+  private static final boolean FILE_READ = true;
   private static IVoteService iVote;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     iVote = new IVoteService();
+    if(FILE_READ) {
+      fileDriver();
+    } else {
+      kbDriver();
+    }
+  }
+
+  private static void kbDriver() {
     Scanner kb = new Scanner(System.in);
     Random rand = new Random();
     try {
@@ -16,7 +23,6 @@ public class SimulationDriver {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
 
     //creates a random amount of students for the classroom and their IDs
     int numStudents = rand.nextInt(30);
@@ -77,6 +83,101 @@ public class SimulationDriver {
           e.printStackTrace();
         }
       }
+
+      printQuestionToFile(question);
+
+      // Enter random student answers
+      for(Student student : iVote.getStudents()) {
+        ArrayList<Character> answer = generateRandomAnswer(question.getPossibleAnswers(), questionType);
+        student.setAnswer(answer);
+        printToFile(student);
+      }
+
+      System.out.println("Students set answers.");
+
+      //Print results
+      System.out.println("All results: ");
+      System.out.println(iVote.getAllResults());
+      System.out.println("Number of correct answers: ");
+      System.out.println(iVote.getCorrectResults());
+      printResultsToFile();
+      iVote.clear();
+    }
+
+    System.out.println("Thank you for using iVote.");
+  }
+
+  private static void fileDriver() throws IOException {
+    FileReader fr = new FileReader("input.txt");
+    BufferedReader br = new BufferedReader(fr);
+    Random rand = new Random();
+    try {
+      FileWriter fw = new FileWriter(new File("results.txt"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    //creates a random amount of students for the classroom and their IDs
+    int numStudents = rand.nextInt(30);
+    for(int i = 0; i < numStudents; i++) {
+      String studentID = createRandomID();
+      Student student = new Student(studentID);
+      iVote.addStudent(student);
+    }
+
+    System.out.println("Created " + numStudents + " students.");
+
+    System.out.println("How many questions do you want to enter?: ");
+    int quizLength = Integer.parseInt(br.readLine());
+    System.out.println("\tRead from file.");
+
+    for(int i = 0; i < quizLength; i++) {
+      System.out.println("Question " + (i+1) + ":");
+
+      // Set question type
+      System.out.println("Is this question single answer (please type 0) or multiple answer (please type 1)?: ");
+      int questionType;
+      do {
+        questionType = Integer.parseInt(br.readLine());
+        System.out.println("\tRead from file.");
+      } while(questionTypeCheck(questionType));
+
+      // Set question prompt
+      System.out.println("What is the question prompt?: ");
+      String prompt = br.readLine();
+      System.out.println("\tRead from file.");
+      Question question;
+      if(questionType == 0) {
+        question = new SingleAnswer(prompt);
+      } else {
+        question = new MultipleAnswer(prompt);
+      }
+
+      //Set question
+      iVote.setQuestion(question);
+
+      // Set answer choices
+      System.out.println("Type the answer choices, separated by semicolons. " +
+          "They will be identified in iVote by the first character of the line, case sensitive.");
+      String possibleAnswers = br.readLine();
+      question.setPossibleAnswers(possibleAnswers);
+      System.out.println("\tRead from file.");
+
+      // Set correct answers
+      if(questionType == 0) {
+        System.out.println("What is the correct answer? " +
+            "Please type the first character of the line of the correct answer, case sensitive.: ");
+        question.setCorrectAnswer(br.readLine().trim().charAt(0));
+      } else {
+        System.out.println("What are the correct answers? Please type the first character of the line of each of the " +
+            "correct answers, case sensitive, separated by semicolons.: ");
+        try {
+          question.setCorrectAnswers(br.readLine().trim());
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+      System.out.println("\tRead from file.");
 
       printQuestionToFile(question);
 

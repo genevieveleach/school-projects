@@ -1,0 +1,15 @@
+3
+0
+What language was this project written in?
+A: Java; B: C++; C: Fortran
+A
+5
+2
+1
+Is this a real question?
+a: yes; b: no; c: who are you;d: this answer is always right
+a;d
+1
+Which professor Yu Sun class is the best?
+a: CS 480; b: CS 356; e: all of the above
+a;e;b
