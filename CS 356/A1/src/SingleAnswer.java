@@ -15,6 +15,12 @@ public class SingleAnswer extends Question {
   }
 
   public void setCorrectAnswer(char correctAnswer) {
+    boolean legal = checkLegalAnswer(correctAnswer);
+    if (legal) {
+      this.correctAnswer = correctAnswer;
+    } else {
+      System.out.println("No legal answer choices provided. Question will not have a correct answer.");
+    }
     this.correctAnswer = correctAnswer;
   }
 
@@ -22,8 +28,14 @@ public class SingleAnswer extends Question {
     return correctAnswer;
   }
 
-  void setCorrectAnswers(String correctAnswers) {
-    this.correctAnswer = correctAnswers.charAt(0);
+  void setCorrectAnswers(String correctAnswers) throws Exception {
+    char a = correctAnswers.trim().charAt(0);
+    boolean legal = checkLegalAnswer(a);
+    if (legal) {
+      this.correctAnswer = a;
+    } else {
+      System.out.println("No legal answer choices provided. Question will not have a correct answer.");
+    }
   }
 
   List<Character> getCorrectAnswers() {

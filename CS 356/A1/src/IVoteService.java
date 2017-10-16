@@ -5,11 +5,19 @@ public class IVoteService implements IVote {
   private Question question;
   private List<Student> students;
 
+  public IVoteService() {
+    students = new ArrayList<>();
+  }
+
   public void addStudent(Student student) {
     students.add(student);
   }
 
-  // Clears question; does not clear students.
+  public List<Student> getStudents() {
+    return students;
+  }
+
+  // Clears question and student answers; does not clear students.
   public void clear() {
     this.question = null;
     for (Student student : students) {
@@ -35,9 +43,9 @@ public class IVoteService implements IVote {
     return false;
   }
 
+  //TODO: fix correct results count
   public String getCorrectResults() {
-    String results = "Number of correct answers: ";
-
+    String results = "";
     if (questionNotSetCheck()) {
       return "Question not set; could not return number of correct results.";
     }
@@ -47,8 +55,8 @@ public class IVoteService implements IVote {
       int count = 0;
       for (Student student : students) {
         ArrayList<Character> list = student.getAnswer();
-        for (Character aList : list) {
-          char a = (char) aList;
+        for (Character ans : list) {
+          char a = (char) ans;
           if (a == correctAnswer) {
             count++;
           }
@@ -63,7 +71,9 @@ public class IVoteService implements IVote {
         for (Character ans : list) {
           if (correctAnswers.contains(ans)) {
             if (correctAnswerDistribution.containsValue(ans)) {
-              correctAnswerDistribution.put(ans, (correctAnswerDistribution.get(ans) + 1));
+              int count = correctAnswerDistribution.get(ans);
+              count++;
+              correctAnswerDistribution.put(ans, count);
             } else {
               correctAnswerDistribution.put(ans, 1);
             }
@@ -78,7 +88,6 @@ public class IVoteService implements IVote {
     if(questionNotSetCheck()) {
       return "Question not set; could not return number of results.";
     }
-
     Map<Character, Integer> results = new HashMap<Character, Integer>();
     for (Student student : students) {
       ArrayList<Character> answers = student.getAnswer();
@@ -99,23 +108,25 @@ public class IVoteService implements IVote {
     StringTokenizer st = new StringTokenizer(ans, ",. ");
     // if it's a single choice question vs a multiple choice question
     if (question.getQuestionType() == 0) {
-      char a = st.nextToken().charAt(0);
+      char a = st.nextToken().trim().charAt(0);
       boolean legal = checkLegalAnswer(a, question.getPossibleAnswers());
       // If the letter is part of the question set, then add it to the answer list.
       // Else, ignore it.
       if (legal) {
-        answer.add(a);
+        if (!answer.contains(a)) {
+          answer.add(a);
+        }
       } else {
         return;
       }
     } else {
       while (st.hasMoreTokens()) {
-        char a = st.nextToken().charAt(0);
+        char a = st.nextToken().trim().charAt(0);
         boolean legal = checkLegalAnswer(a, question.getPossibleAnswers());
         if (legal) {
-          answer.add(a);
-        } else {
-          continue;
+          if(!answer.contains(a)) {
+            answer.add(a);
+          }
         }
       }
     }

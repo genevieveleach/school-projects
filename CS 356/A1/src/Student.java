@@ -17,7 +17,7 @@ public class Student {
 
   public void setAnswer (ArrayList<Character> answer) {
     // will override any previously submitted answers
-    answer.clear();
+    this.answer.clear();
     this.answer = answer;
   }
 
@@ -28,6 +28,4 @@ public class Student {
   public ArrayList<Character> getAnswer() {
     return (ArrayList<Character>) answer;
   }
-
-
 }

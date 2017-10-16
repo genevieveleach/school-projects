@@ -1,7 +1,13 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
 public abstract class Question {
+
+  abstract void setCorrectAnswer(char correctAnswer);
+  abstract void setCorrectAnswers(String correctAnswers) throws Exception;
+  abstract char getCorrectAnswer();
+  abstract List<Character> getCorrectAnswers();
 
   private int questionType;
   private String prompt;
@@ -10,16 +16,14 @@ public abstract class Question {
   // if questionType = 0, single choice, else if questionType = 1, multiple choice
   public Question(int questionType) {
     this.questionType = questionType;
+    possibleAnswers = new ArrayList<String>();
   }
 
   public Question(int questionType, String prompt) {
     this.questionType = questionType;
     this.prompt = prompt;
+    possibleAnswers = new ArrayList<String>();
   }
-  abstract void setCorrectAnswer(char correctAnswer);
-  abstract void setCorrectAnswers(String correctAnswers);
-  abstract char getCorrectAnswer();
-  abstract List<Character> getCorrectAnswers();
 
   public int getQuestionType() {
     return questionType;
@@ -38,15 +42,27 @@ public abstract class Question {
   public void setPossibleAnswers(String possibleAnswers) {
     StringTokenizer st = new StringTokenizer(possibleAnswers, ";");
     while (st.hasMoreTokens()) {
-      this.possibleAnswers.add(st.nextToken());
+      String token = st.nextToken().trim();
+      this.possibleAnswers.add(token);
     }
   }
 
   public void setPossibleAnswers(List<String> possibleAnswers) {
     this.possibleAnswers = possibleAnswers;
   }
+
   public List<String> getPossibleAnswers() {
     return possibleAnswers;
   }
 
+  public boolean checkLegalAnswer(char a) {
+    boolean legal = false;
+    for(String check : this.getPossibleAnswers()) {
+      if (check.charAt(0) == a) {
+        legal = true;
+        return legal;
+      }
+    }
+    return legal;
+  }
 }

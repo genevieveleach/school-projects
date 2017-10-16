@@ -18,7 +18,7 @@ public class MultipleAnswer extends Question {
   public void setCorrectAnswers(String correctAnswers) {
     StringTokenizer st = new StringTokenizer(correctAnswers, ",. ");
     while (st.hasMoreTokens()) {
-      char a = st.nextToken().charAt(0);
+      char a = st.nextToken().trim().charAt(0);
       boolean legal = checkLegalAnswer(a);
       if (legal) {
         this.correctAnswers.add(a);
@@ -32,22 +32,16 @@ public class MultipleAnswer extends Question {
     return correctAnswers;
   }
 
-  public boolean checkLegalAnswer(char a) {
-    boolean legal = false;
-    for(String check : this.getPossibleAnswers()) {
-      if (check.charAt(0) == a) {
-        legal = true;
-        return legal;
-      }
-    }
-    return legal;
-  }
 
   public void setCorrectAnswer(char correctAnswer) {
-    this.correctAnswers.add(correctAnswer);
+    boolean legal = checkLegalAnswer(correctAnswer);
+    if (legal) {
+      this.correctAnswers.add(correctAnswer);
+    } else {
+      System.out.println("No legal answer choices provided. Question will not have a correct answer.");
+    }
   }
 
-  // Only use this if there is one correct answer in the multiple answer set.
   public char getCorrectAnswer() {
     return correctAnswers.get(0);
   }
