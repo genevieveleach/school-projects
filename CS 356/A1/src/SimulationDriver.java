@@ -104,7 +104,9 @@ public class SimulationDriver {
   private static void printQuestionToFile(Question question) {
     try{
       FileWriter fw = new FileWriter(new File("results.txt"),true);
-      fw.write("Question: " + question.getPrompt() + "\n");
+      fw.write("Question: " + question.getPrompt());
+      fw.write("\nAnswer Choices: " + question.getPossibleAnswers());
+      fw.write("\nCorrect Answer(s): " + question.getCorrectAnswers() + "\n");
       fw.close();
     } catch(Exception e) {
       e.printStackTrace();
@@ -147,9 +149,14 @@ public class SimulationDriver {
       randomAnswer.add(answers.charAt(rand.nextInt(answers.length())));
     } else {
       // else if multiple choice, add as many answers as you want
-      int numAnswers = rand.nextInt(answers.length());
+      // added +1 so students would at least guess 1 answer, without it they could choose not to answer
+      // and we want to encourage at least guessing
+      int numAnswers = rand.nextInt(answers.length()) + 1;
       for (int i = 0; i < numAnswers; i++) {
-        randomAnswer.add(answers.charAt(rand.nextInt(answers.length())));
+        char a = answers.charAt(rand.nextInt(answers.length()));
+        if (!randomAnswer.contains(a)) {
+          randomAnswer.add(a);
+        }
       }
     }
     return (ArrayList<Character>)randomAnswer;
