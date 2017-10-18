@@ -45,7 +45,6 @@ public class Ex3Client {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   private static short checksum(byte[] b) {
