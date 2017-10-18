@@ -1,0 +1,42 @@
+Question: What language was this project written in?
+Answer Choices: [A: Java, B: C++, C: Fortran]
+Correct Answer(s): [A]
+Student 6JI3V answered: [B]
+Student KN03E answered: [C]
+Student JWZBS answered: [C]
+Student L0V0O answered: [A]
+Student O3X9B answered: [C]
+Student 1S71D answered: [B]
+Student U27T3 answered: [C]
+All results: 
+{A=1, B=2, C=4}
+Number of correct answers: 
+{A=1}
+Question: Is this a real question?
+Answer Choices: [a: yes, b: no, c: who are you, d: this answer is always right]
+Correct Answer(s): [a, d]
+Student 6JI3V answered: [a]
+Student KN03E answered: [a, d]
+Student JWZBS answered: [d]
+Student L0V0O answered: [d, c]
+Student O3X9B answered: [a]
+Student 1S71D answered: [a, d]
+Student U27T3 answered: [c, b]
+All results: 
+{a=4, b=1, c=2, d=4}
+Number of correct answers: 
+{a=4, d=4}
+Question: Which professor Yu Sun class is the best?
+Answer Choices: [a: CS 480, b: CS 356, e: all of the above]
+Correct Answer(s): [a, e, b]
+Student 6JI3V answered: [e, a]
+Student KN03E answered: [e, b, a]
+Student JWZBS answered: [a, e]
+Student L0V0O answered: [b]
+Student O3X9B answered: [a]
+Student 1S71D answered: [e, a]
+Student U27T3 answered: [e]
+All results: 
+{a=5, b=2, e=5}
+Number of correct answers: 
+{a=5, b=2, e=5}
