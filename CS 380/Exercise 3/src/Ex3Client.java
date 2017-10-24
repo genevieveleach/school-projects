@@ -25,12 +25,15 @@ public class Ex3Client {
         }
         System.out.printf("%02X", readBytes[i]);
       }
+
       short checksum = checksum(readBytes);
       System.out.println("\nChecksum calculated: 0x" + String.format("%04X", checksum));
+
       ByteBuffer buffer = ByteBuffer.allocate(2);
       buffer.putShort(checksum);
       byte[] output = buffer.array();
       os.write(output);
+
       int response = is.read();
       if(response == 1) {
         System.out.println("Response good.");
@@ -42,20 +45,40 @@ public class Ex3Client {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
-  //TODO: fix
   private static short checksum(byte[] b) {
-    long sum = 0;
-    for (int i = 0; i < b.length; i++) {
-      sum += b[i];
+    //if the array length is odd, extend it and make it even, last value 0 because we compare pairs of bytes
+    if((b.length % 2) != 0) {
+      byte[] bOdd = new byte[b.length+1];
+      System.arraycopy(b, 0, bOdd, 0, b.length);
+      bOdd[bOdd.length-1] = 0;
+      b = bOdd;
+    }
+    int sum = 0;
+    for (int i = 0; (i + 1) < b.length; i += 2) {
+      int first = b[i];
+      // if value is negative, xor it to fix it
+      if (first < 0) {
+        first ^= 0xFFFFFF00;
+      }
+      int second = b[i+1];
+      // if value is negative, xor it to fix it
+      if (second < 0) {
+        second^= 0xFFFFFF00;
+      }
+      // shift the first value left
+      first <<= 8;
+      // xor it with the second value then add to sum
+      sum += (first ^ second);
+      // overflow detection
       if ((sum & 0xFFFF0000) != 0) {
         /*carry occurred, so wrap around */
         sum &= 0xFFFF;
         sum++;
       }
     }
+    // preform 1's complement and return the rightmost 16 bits of the sum
     return (short)(~(sum & 0xFFFF));
   }
 }
