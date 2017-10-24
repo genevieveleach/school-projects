@@ -1,0 +1,955 @@
+"C:\Program Files (x86)\Java\jdk1.8.0_131\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\lib\idea_rt.jar=51129:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Users\Genniy\Google Drive\CPP\school-projects\CS 420\Project 1\out\production\Project 1" EightPuzzleDriver
+Welcome to the 8-Puzzle.
+Please choose an option: 
+1: Randomly generate an 8-puzzle
+2: Enter your own 8-puzzle
+3: Read from file
+Answer overridden, randomly generating 101 test cases.
+All boards generated.
+Solving [4, 0, 7, 5, 6, 3, 1, 2, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 78042926 ns
+Nodes Generated: 53554
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 9377587 ns
+Nodes Generated: 7051
+Steps: 25
+Solving [4, 3, 0, 1, 2, 5, 7, 6, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 1520199 ns
+Nodes Generated: 2954
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 1539557 ns
+Nodes Generated: 1432
+Steps: 18
+Solving [8, 3, 0, 2, 5, 6, 7, 1, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 64916594 ns
+Nodes Generated: 43546
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 1877730 ns
+Nodes Generated: 2481
+Steps: 24
+Solving [6, 3, 5, 7, 2, 0, 4, 8, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 564939 ns
+Nodes Generated: 867
+Steps: 15
+Heuristic: Manhattan Distance
+Elapsed time: 68346 ns
+Nodes Generated: 102
+Steps: 15
+Solving [6, 2, 4, 8, 7, 0, 3, 1, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 45945320 ns
+Nodes Generated: 33262
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 20374140 ns
+Nodes Generated: 6942
+Steps: 23
+Solving [6, 3, 2, 1, 7, 0, 4, 5, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 30094246 ns
+Nodes Generated: 13662
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 2950718 ns
+Nodes Generated: 3168
+Steps: 21
+Solving [2, 8, 6, 5, 7, 0, 4, 3, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 319710277 ns
+Nodes Generated: 134689
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 35612472 ns
+Nodes Generated: 18606
+Steps: 27
+Solving [2, 5, 7, 4, 3, 1, 8, 0, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 44760134 ns
+Nodes Generated: 29093
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 2840496 ns
+Nodes Generated: 3579
+Steps: 23
+Solving [1, 8, 2, 7, 6, 5, 0, 4, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 1320298 ns
+Nodes Generated: 2757
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 388346 ns
+Nodes Generated: 542
+Steps: 18
+Solving [4, 6, 2, 0, 7, 8, 3, 5, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 3374225 ns
+Nodes Generated: 6584
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 1796743 ns
+Nodes Generated: 2209
+Steps: 21
+Solving [7, 2, 5, 1, 3, 8, 4, 0, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 404149 ns
+Nodes Generated: 897
+Steps: 15
+Heuristic: Manhattan Distance
+Elapsed time: 83358 ns
+Nodes Generated: 126
+Steps: 15
+Solving [1, 0, 4, 8, 2, 6, 3, 7, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 1147260 ns
+Nodes Generated: 2562
+Steps: 17
+Heuristic: Manhattan Distance
+Elapsed time: 549136 ns
+Nodes Generated: 750
+Steps: 17
+Solving [8, 4, 0, 5, 3, 7, 6, 1, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 46907297 ns
+Nodes Generated: 43978
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 2322175 ns
+Nodes Generated: 2158
+Steps: 24
+Solving [6, 3, 5, 7, 4, 1, 8, 2, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 2088298 ns
+Nodes Generated: 2973
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 390716 ns
+Nodes Generated: 399
+Steps: 18
+Solving [5, 8, 0, 2, 7, 6, 1, 3, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 11548849 ns
+Nodes Generated: 16564
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 731655 ns
+Nodes Generated: 830
+Steps: 22
+Solving [2, 6, 5, 7, 8, 4, 0, 1, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 13945295 ns
+Nodes Generated: 19696
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 1773434 ns
+Nodes Generated: 1622
+Steps: 22
+Solving [8, 1, 6, 0, 2, 4, 7, 3, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 8453143 ns
+Nodes Generated: 14861
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 948939 ns
+Nodes Generated: 1349
+Steps: 21
+Solving [2, 7, 3, 1, 4, 6, 5, 0, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 219629211 ns
+Nodes Generated: 117277
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 12167120 ns
+Nodes Generated: 13332
+Steps: 27
+Solving [7, 8, 2, 3, 0, 1, 4, 5, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 34539089 ns
+Nodes Generated: 26863
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 3669731 ns
+Nodes Generated: 3633
+Steps: 22
+Solving [0, 3, 1, 5, 2, 4, 8, 6, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 5964646 ns
+Nodes Generated: 7939
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1824001 ns
+Nodes Generated: 2357
+Steps: 20
+Solving [2, 8, 0, 6, 4, 5, 1, 7, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 35952226 ns
+Nodes Generated: 40235
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 3486422 ns
+Nodes Generated: 4194
+Steps: 24
+Solving [1, 6, 3, 0, 2, 5, 7, 8, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 8856896 ns
+Nodes Generated: 13503
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1450668 ns
+Nodes Generated: 1907
+Steps: 21
+Solving [2, 3, 0, 6, 5, 1, 4, 8, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 3984991 ns
+Nodes Generated: 7876
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1562075 ns
+Nodes Generated: 2057
+Steps: 20
+Solving [2, 0, 3, 7, 4, 5, 8, 1, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 62678568 ns
+Nodes Generated: 61608
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 5602770 ns
+Nodes Generated: 6940
+Steps: 25
+Solving [8, 6, 1, 4, 2, 7, 3, 0, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 41208921 ns
+Nodes Generated: 29049
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 4605633 ns
+Nodes Generated: 4907
+Steps: 23
+Solving [7, 3, 6, 0, 4, 2, 1, 8, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 9188748 ns
+Nodes Generated: 13775
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 799606 ns
+Nodes Generated: 1098
+Steps: 21
+Solving [8, 3, 0, 1, 2, 6, 5, 4, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 51481325 ns
+Nodes Generated: 43663
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 2263311 ns
+Nodes Generated: 2992
+Steps: 24
+Solving [6, 3, 4, 0, 2, 5, 7, 1, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 372148 ns
+Nodes Generated: 844
+Steps: 15
+Heuristic: Manhattan Distance
+Elapsed time: 300642 ns
+Nodes Generated: 412
+Steps: 15
+Solving [7, 3, 2, 6, 5, 4, 8, 0, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 8720205 ns
+Nodes Generated: 14209
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1650175 ns
+Nodes Generated: 2185
+Steps: 21
+Solving [6, 5, 2, 4, 8, 3, 1, 0, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 16894038 ns
+Nodes Generated: 14788
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 2023902 ns
+Nodes Generated: 2451
+Steps: 21
+Solving [4, 7, 3, 2, 5, 6, 8, 0, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 51903645 ns
+Nodes Generated: 59760
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 6876054 ns
+Nodes Generated: 6549
+Steps: 25
+Solving [1, 5, 8, 2, 6, 7, 3, 4, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 655013 ns
+Nodes Generated: 1451
+Steps: 16
+Heuristic: Manhattan Distance
+Elapsed time: 321580 ns
+Nodes Generated: 458
+Steps: 16
+Solving [1, 3, 6, 5, 7, 0, 8, 2, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 138395368 ns
+Nodes Generated: 113004
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 8016204 ns
+Nodes Generated: 9485
+Steps: 27
+Solving [1, 3, 5, 0, 6, 7, 4, 2, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 51370312 ns
+Nodes Generated: 32424
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 7951018 ns
+Nodes Generated: 9923
+Steps: 23
+Solving [3, 8, 1, 6, 0, 5, 7, 4, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 641185 ns
+Nodes Generated: 1423
+Steps: 16
+Heuristic: Manhattan Distance
+Elapsed time: 546371 ns
+Nodes Generated: 747
+Steps: 16
+Solving [4, 7, 8, 5, 3, 1, 0, 2, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 48747891 ns
+Nodes Generated: 44642
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 2872891 ns
+Nodes Generated: 3555
+Steps: 24
+Solving [5, 0, 8, 2, 6, 1, 4, 7, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 6319018 ns
+Nodes Generated: 12756
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 905088 ns
+Nodes Generated: 1239
+Steps: 21
+Solving [1, 2, 7, 8, 0, 6, 4, 3, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 11224898 ns
+Nodes Generated: 11260
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1320297 ns
+Nodes Generated: 1745
+Steps: 20
+Solving [2, 4, 8, 3, 6, 1, 7, 0, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 6427660 ns
+Nodes Generated: 12896
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 2674175 ns
+Nodes Generated: 3711
+Steps: 21
+Solving [5, 1, 4, 7, 6, 0, 8, 3, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 17919619 ns
+Nodes Generated: 27303
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 1997829 ns
+Nodes Generated: 2872
+Steps: 23
+Solving [5, 1, 7, 4, 6, 2, 3, 0, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 1146865 ns
+Nodes Generated: 2663
+Steps: 17
+Heuristic: Manhattan Distance
+Elapsed time: 325531 ns
+Nodes Generated: 498
+Steps: 17
+Solving [3, 1, 5, 2, 6, 4, 8, 0, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 7676451 ns
+Nodes Generated: 10904
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 3098076 ns
+Nodes Generated: 4403
+Steps: 21
+Solving [3, 6, 5, 8, 0, 2, 7, 1, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 57504835 ns
+Nodes Generated: 56375
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 8093636 ns
+Nodes Generated: 9766
+Steps: 24
+Solving [2, 3, 6, 8, 1, 5, 0, 4, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 73613096 ns
+Nodes Generated: 46211
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 5456992 ns
+Nodes Generated: 6562
+Steps: 24
+Solving [2, 6, 1, 7, 0, 3, 5, 8, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 52124486 ns
+Nodes Generated: 48921
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 3907558 ns
+Nodes Generated: 5100
+Steps: 24
+Solving [4, 7, 6, 1, 3, 0, 8, 5, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 6349043 ns
+Nodes Generated: 12374
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 562173 ns
+Nodes Generated: 759
+Steps: 21
+Solving [1, 7, 3, 6, 0, 4, 8, 2, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 11689095 ns
+Nodes Generated: 11100
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1549829 ns
+Nodes Generated: 2076
+Steps: 20
+Solving [0, 8, 4, 7, 3, 2, 6, 1, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 4297484 ns
+Nodes Generated: 8217
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 2429236 ns
+Nodes Generated: 3137
+Steps: 22
+Solving [7, 1, 8, 0, 3, 2, 5, 6, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 19883078 ns
+Nodes Generated: 28499
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 7466277 ns
+Nodes Generated: 6724
+Steps: 23
+Solving [7, 4, 0, 6, 3, 8, 5, 1, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 8324352 ns
+Nodes Generated: 18217
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 978964 ns
+Nodes Generated: 1448
+Steps: 22
+Solving [1, 6, 0, 3, 2, 4, 8, 7, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 1146470 ns
+Nodes Generated: 2783
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 544000 ns
+Nodes Generated: 834
+Steps: 18
+Solving [1, 0, 6, 4, 5, 7, 3, 8, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 10524848 ns
+Nodes Generated: 11019
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 2532348 ns
+Nodes Generated: 2024
+Steps: 21
+Solving [6, 4, 7, 3, 2, 5, 1, 0, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 28180960 ns
+Nodes Generated: 27830
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 4050571 ns
+Nodes Generated: 5091
+Steps: 23
+Solving [5, 4, 2, 0, 8, 1, 6, 7, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 6177585 ns
+Nodes Generated: 12298
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1180051 ns
+Nodes Generated: 1702
+Steps: 21
+Solving [7, 4, 5, 2, 1, 0, 8, 6, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 15791420 ns
+Nodes Generated: 25122
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 1797138 ns
+Nodes Generated: 1966
+Steps: 23
+Solving [2, 8, 0, 3, 7, 1, 4, 5, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 2648496 ns
+Nodes Generated: 2968
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 436148 ns
+Nodes Generated: 558
+Steps: 18
+Solving [3, 4, 1, 2, 5, 7, 0, 8, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 9830724 ns
+Nodes Generated: 20841
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 3134422 ns
+Nodes Generated: 3814
+Steps: 22
+Solving [2, 7, 6, 0, 5, 1, 4, 3, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 83667029 ns
+Nodes Generated: 57058
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 5509536 ns
+Nodes Generated: 6914
+Steps: 25
+Solving [4, 7, 0, 1, 6, 8, 5, 2, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 102010945 ns
+Nodes Generated: 88368
+Steps: 26
+Heuristic: Manhattan Distance
+Elapsed time: 5869437 ns
+Nodes Generated: 7423
+Steps: 26
+Solving [4, 1, 0, 5, 3, 8, 7, 6, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 14401591 ns
+Nodes Generated: 7495
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1896298 ns
+Nodes Generated: 2175
+Steps: 20
+Solving [8, 6, 4, 0, 7, 1, 2, 5, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 349187041 ns
+Nodes Generated: 195795
+Steps: 29
+Heuristic: Manhattan Distance
+Elapsed time: 46733469 ns
+Nodes Generated: 30667
+Steps: 29
+Solving [3, 6, 7, 1, 5, 2, 4, 8, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 107586455 ns
+Nodes Generated: 90091
+Steps: 26
+Heuristic: Manhattan Distance
+Elapsed time: 10953885 ns
+Nodes Generated: 12896
+Steps: 26
+Solving [2, 5, 3, 6, 7, 4, 1, 8, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 45753320 ns
+Nodes Generated: 20835
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 1632397 ns
+Nodes Generated: 1924
+Steps: 22
+Solving [1, 4, 0, 8, 5, 3, 2, 6, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 11089786 ns
+Nodes Generated: 19286
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 2334422 ns
+Nodes Generated: 3056
+Steps: 24
+Solving [5, 1, 4, 6, 3, 2, 8, 0, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 2823904 ns
+Nodes Generated: 5874
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 1324643 ns
+Nodes Generated: 1781
+Steps: 19
+Solving [6, 5, 1, 2, 0, 4, 8, 3, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 46618901 ns
+Nodes Generated: 56818
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 17088014 ns
+Nodes Generated: 14069
+Steps: 26
+Solving [1, 6, 5, 8, 3, 7, 2, 4, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 10085144 ns
+Nodes Generated: 18804
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 1336495 ns
+Nodes Generated: 1596
+Steps: 22
+Solving [3, 4, 5, 0, 2, 7, 1, 8, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 2977582 ns
+Nodes Generated: 6322
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 981729 ns
+Nodes Generated: 1356
+Steps: 19
+Solving [3, 1, 4, 7, 8, 6, 5, 2, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 1271705 ns
+Nodes Generated: 3023
+Steps: 18
+Heuristic: Manhattan Distance
+Elapsed time: 134716 ns
+Nodes Generated: 214
+Steps: 18
+Solving [7, 8, 0, 2, 5, 3, 4, 1, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 14326135 ns
+Nodes Generated: 18230
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 1742224 ns
+Nodes Generated: 2379
+Steps: 24
+Solving [8, 6, 4, 1, 5, 0, 7, 3, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 5515066 ns
+Nodes Generated: 11282
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1232988 ns
+Nodes Generated: 1527
+Steps: 21
+Solving [3, 5, 0, 6, 1, 8, 2, 7, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 3728990 ns
+Nodes Generated: 7694
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 893630 ns
+Nodes Generated: 1307
+Steps: 20
+Solving [1, 7, 4, 2, 8, 5, 6, 0, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 2950323 ns
+Nodes Generated: 6584
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 432593 ns
+Nodes Generated: 652
+Steps: 19
+Solving [1, 7, 5, 0, 3, 4, 8, 2, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 23264413 ns
+Nodes Generated: 29003
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 4342522 ns
+Nodes Generated: 5398
+Steps: 23
+Solving [4, 1, 3, 0, 6, 8, 2, 7, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 52530214 ns
+Nodes Generated: 60268
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 9455019 ns
+Nodes Generated: 11149
+Steps: 25
+Solving [0, 8, 3, 4, 1, 2, 5, 7, 6]
+Heuristic: Misplaced Tiles
+Elapsed time: 34292570 ns
+Nodes Generated: 44037
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 3220545 ns
+Nodes Generated: 4101
+Steps: 24
+Solving [3, 8, 5, 6, 4, 1, 0, 2, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 886124 ns
+Nodes Generated: 1319
+Steps: 16
+Heuristic: Manhattan Distance
+Elapsed time: 207012 ns
+Nodes Generated: 297
+Steps: 16
+Solving [6, 4, 0, 8, 3, 2, 5, 7, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 13959912 ns
+Nodes Generated: 18973
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 2721582 ns
+Nodes Generated: 3036
+Steps: 22
+Solving [0, 3, 6, 5, 1, 7, 2, 8, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 177009128 ns
+Nodes Generated: 132817
+Steps: 28
+Heuristic: Manhattan Distance
+Elapsed time: 11618380 ns
+Nodes Generated: 12667
+Steps: 28
+Solving [6, 4, 3, 5, 1, 7, 8, 0, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 15580061 ns
+Nodes Generated: 24089
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 3113483 ns
+Nodes Generated: 4040
+Steps: 23
+Solving [4, 8, 1, 3, 5, 7, 6, 2, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 13537986 ns
+Nodes Generated: 9032
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 1958717 ns
+Nodes Generated: 2603
+Steps: 20
+Solving [1, 0, 2, 8, 7, 5, 3, 6, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 474865 ns
+Nodes Generated: 1055
+Steps: 15
+Heuristic: Manhattan Distance
+Elapsed time: 349630 ns
+Nodes Generated: 489
+Steps: 15
+Solving [7, 2, 4, 0, 6, 8, 1, 5, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 75250628 ns
+Nodes Generated: 72507
+Steps: 25
+Heuristic: Manhattan Distance
+Elapsed time: 8864797 ns
+Nodes Generated: 10852
+Steps: 25
+Solving [4, 1, 3, 0, 6, 8, 5, 2, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 10221440 ns
+Nodes Generated: 12571
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1419063 ns
+Nodes Generated: 1898
+Steps: 21
+Solving [1, 2, 4, 7, 5, 0, 6, 3, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 3166818 ns
+Nodes Generated: 6414
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 1977286 ns
+Nodes Generated: 2619
+Steps: 19
+Solving [3, 1, 4, 2, 6, 0, 7, 8, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 1103803 ns
+Nodes Generated: 2442
+Steps: 17
+Heuristic: Manhattan Distance
+Elapsed time: 731260 ns
+Nodes Generated: 1005
+Steps: 17
+Solving [1, 7, 3, 4, 0, 8, 5, 6, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 46609024 ns
+Nodes Generated: 55184
+Steps: 24
+Heuristic: Manhattan Distance
+Elapsed time: 5905388 ns
+Nodes Generated: 7421
+Steps: 24
+Solving [3, 8, 6, 1, 4, 2, 7, 0, 5]
+Heuristic: Misplaced Tiles
+Elapsed time: 25519427 ns
+Nodes Generated: 28924
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 2564742 ns
+Nodes Generated: 3294
+Steps: 23
+Solving [7, 5, 4, 0, 3, 6, 2, 1, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 7962476 ns
+Nodes Generated: 14109
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 452346 ns
+Nodes Generated: 634
+Steps: 21
+Solving [3, 2, 5, 0, 6, 1, 4, 8, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 2832990 ns
+Nodes Generated: 5772
+Steps: 19
+Heuristic: Manhattan Distance
+Elapsed time: 1833878 ns
+Nodes Generated: 2433
+Steps: 19
+Solving [5, 0, 3, 4, 6, 1, 7, 8, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 948149 ns
+Nodes Generated: 2132
+Steps: 17
+Heuristic: Manhattan Distance
+Elapsed time: 427852 ns
+Nodes Generated: 622
+Steps: 17
+Solving [4, 1, 3, 8, 5, 7, 6, 0, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 11469441 ns
+Nodes Generated: 13384
+Steps: 21
+Heuristic: Manhattan Distance
+Elapsed time: 1771063 ns
+Nodes Generated: 2319
+Steps: 21
+Solving [5, 2, 0, 1, 3, 7, 6, 4, 8]
+Heuristic: Misplaced Tiles
+Elapsed time: 4568497 ns
+Nodes Generated: 9268
+Steps: 20
+Heuristic: Manhattan Distance
+Elapsed time: 2017187 ns
+Nodes Generated: 2744
+Steps: 20
+Solving [5, 7, 2, 8, 3, 1, 6, 0, 4]
+Heuristic: Misplaced Tiles
+Elapsed time: 203243222 ns
+Nodes Generated: 135865
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 14740950 ns
+Nodes Generated: 16731
+Steps: 27
+Solving [0, 7, 1, 5, 6, 2, 4, 8, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 28274985 ns
+Nodes Generated: 21140
+Steps: 22
+Heuristic: Manhattan Distance
+Elapsed time: 1766323 ns
+Nodes Generated: 2343
+Steps: 22
+Solving [6, 4, 0, 2, 8, 7, 5, 1, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 86676217 ns
+Nodes Generated: 86054
+Steps: 26
+Heuristic: Manhattan Distance
+Elapsed time: 7078721 ns
+Nodes Generated: 5117
+Steps: 26
+Solving [8, 1, 7, 4, 5, 0, 3, 6, 2]
+Heuristic: Misplaced Tiles
+Elapsed time: 16934334 ns
+Nodes Generated: 29625
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 4154473 ns
+Nodes Generated: 5287
+Steps: 23
+Solving [2, 0, 7, 5, 6, 8, 4, 3, 1]
+Heuristic: Misplaced Tiles
+Elapsed time: 210577549 ns
+Nodes Generated: 132057
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 38854747 ns
+Nodes Generated: 21973
+Steps: 27
+Solving [8, 6, 3, 5, 4, 2, 1, 0, 7]
+Heuristic: Misplaced Tiles
+Elapsed time: 13937394 ns
+Nodes Generated: 25060
+Steps: 23
+Heuristic: Manhattan Distance
+Elapsed time: 1492544 ns
+Nodes Generated: 2006
+Steps: 23
+Solving [8, 6, 2, 4, 7, 0, 5, 1, 3]
+Heuristic: Misplaced Tiles
+Elapsed time: 166120033 ns
+Nodes Generated: 131327
+Steps: 27
+Heuristic: Manhattan Distance
+Elapsed time: 14375517 ns
+Nodes Generated: 16213
+Steps: 27
+Solving [2, 4, 5, 1, 8, 7, 3, 6, 0]
+Heuristic: Misplaced Tiles
+Elapsed time: 71902 ns
+Nodes Generated: 173
+Steps: 12
+Heuristic: Manhattan Distance
+Elapsed time: 62025 ns
+Nodes Generated: 95
+Steps: 12
+Solved all tests.
+Average Nodes Generated Per Depth for Misplaced Tiles Heuristic:
+Depth 12: 173.00	Count: 1
+Depth 15: 915.75	Count: 4
+Depth 16: 1397.67	Count: 3
+Depth 17: 2449.75	Count: 4
+Depth 18: 2909.67	Count: 6
+Depth 19: 6258.33	Count: 6
+Depth 20: 8875.67	Count: 9
+Depth 21: 13024.44	Count: 16
+Depth 22: 19949.91	Count: 11
+Depth 23: 28406.38	Count: 13
+Depth 24: 47600.91	Count: 11
+Depth 25: 60792.50	Count: 6
+Depth 26: 88171.00	Count: 3
+Depth 27: 127369.83	Count: 6
+Depth 28: 132817.00	Count: 1
+Depth 29: 195795.00	Count: 1
+Average Nodes Generated Per Depth for Manhattan Distance Heuristic:
+Depth 12: 95.00	Count: 1
+Depth 15: 282.25	Count: 4
+Depth 16: 500.67	Count: 3
+Depth 17: 718.75	Count: 4
+Depth 18: 663.17	Count: 6
+Depth 19: 1768.20	Count: 5
+Depth 20: 2133.00	Count: 8
+Depth 21: 2034.29	Count: 17
+Depth 22: 2338.30	Count: 10
+Depth 23: 4771.46	Count: 13
+Depth 24: 4480.42	Count: 12
+Depth 25: 8242.50	Count: 6
+Depth 26: 9876.25	Count: 4
+Depth 27: 16056.67	Count: 6
+Depth 28: 12667.00	Count: 1
+Depth 29: 30667.00	Count: 1
+Times printed to files.
+
+Process finished with exit code 0

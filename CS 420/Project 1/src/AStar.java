@@ -4,7 +4,9 @@ import java.util.*;
 
 public class AStar {
 
-  private static final boolean TESTING = true;
+  private static final boolean TESTING = false;
+  public static HashMap<Integer, Long> timesManhattan = new HashMap<>();
+  public static HashMap<Integer, Long> timesMisplaced = new HashMap<>();
   private int nodesGenerated;
 
   public HashMap<Integer, Integer> aStarSearch(Board board) throws Exception {
@@ -36,7 +38,11 @@ public class AStar {
         System.out.println("Steps: " + b.getGn());
         depthNodeMap.put(b.getGn(), nodesGenerated);
         if(TESTING) {
-          printTimeToFile(b.getGn(), end);
+          if (heuristic == 1) {
+            timesMisplaced.compute(b.getGn(), (k, v) -> v == null ? end : v + end);
+          } else if (heuristic == 2) {
+            timesManhattan.compute(b.getGn(), (k, v) -> v == null ? end : v + end);
+          }
         }
         return depthNodeMap;
       }
@@ -52,17 +58,6 @@ public class AStar {
       exploredSet.add(b);
     }
 
-    throw new Exception("Puzzle reached end of frontier without finding the goal state. Is your program correct?");
-  }
-
-
-  private static void printTimeToFile(int depth, long time) throws Exception {
-    try {
-      FileWriter f = new FileWriter(new File("output.csv"),true);
-      f.write(depth + "," + time + "\n");
-      f.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    throw new Exception("Puzzle reached end of frontier. Failure.");
   }
 }
