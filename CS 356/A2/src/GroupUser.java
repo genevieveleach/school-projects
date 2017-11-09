@@ -1,8 +1,8 @@
-public class UserGroup extends User {
+public class GroupUser extends User {
 
   private String groupID;
 
-  public UserGroup(String id) {
+  public GroupUser(String id) {
     setID(id);
   }
 
@@ -12,16 +12,16 @@ public class UserGroup extends User {
 
   @Override
   public void setID(String id) {
-
+    this.groupID = id;
   }
 
   @Override
   public String getID() {
-    return null;
+    return this.groupID;
   }
 
   @Override
   public String toString() {
-    return null;
+    return this.getID();
   }
 }
