@@ -1,9 +1,10 @@
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class EightPuzzleDriver {
 
-  private static final boolean TESTING = false;
+  private static final boolean TESTING = true;
   private static final int NUMTESTS = 101;
   private static AStar aStar = new AStar();
 
@@ -74,8 +75,6 @@ public class EightPuzzleDriver {
     for (int i : keys) {
       System.out.printf("Depth %d: %.2f\tCount: %d\n", i, ((double)resultsManhattan.get(i)/countManhattan.get(i)), countManhattan.get(i));
     }
-    printTimeToFile(aStar.timesMisplaced, aStar.timesManhattan, countMisplaced, countManhattan);
-    System.out.println("Times printed to files.");
   }
 
 
@@ -139,8 +138,6 @@ public class EightPuzzleDriver {
     for (int i : toSort) {
       System.out.printf("Depth %d: %.2f\tCount: %d\n", i, ((double) resultsManhattan.get(i) / countManhattan.get(i)), countManhattan.get(i));
     }
-    printTimeToFile(aStar.timesMisplaced, aStar.timesManhattan, countMisplaced, countManhattan);
-    System.out.println("Times printed to file.");
   }
 
   private static void userInputPuzzle() throws Exception {
@@ -182,37 +179,9 @@ public class EightPuzzleDriver {
   }
 
   private static void initTimeFile() throws IOException {
-    FileWriter f = new FileWriter(new File("outputTimeMisplaced.txt"), false);
-    f.write("Average Times:");
+    FileWriter f = new FileWriter(new File("output.csv"), false);
+    f.write("d, time\n");
     f.close();
-    f = new FileWriter(new File("outputTimeManhattan.txt"), false);
-    f.write("Average Times:");
-    f.close();
-  }
-
-  private static void printTimeToFile(HashMap<Integer, Long> timeMisplaced, HashMap<Integer, Long> timeManhattan, HashMap<Integer, Integer> countMisplaced, HashMap<Integer, Integer> countManhattan) throws Exception {
-    try {
-      FileWriter f = new FileWriter(new File("outputTimeMisplaced.txt"), true);
-      Set<Integer> keys = timeMisplaced.keySet();
-      List<Integer> toSort = new ArrayList<>();
-      toSort.addAll(keys);
-      Collections.sort(toSort);
-      for (int i : toSort) {
-        f.write("\nDepth "+ i + ": " + ((double) timeMisplaced.get(i) / countMisplaced.get(i)));
-      }
-      f.close();
-      f = new FileWriter(new File("outputTimeManhattan.txt"), true);
-      keys = timeManhattan.keySet();
-      toSort.clear();
-      toSort.addAll(keys);
-      Collections.sort(toSort);
-      for (int i : toSort) {
-        f.write("\nDepth "+ i + ": " + ((double) timeManhattan.get(i) / countManhattan.get(i)));
-      }
-      f.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
   }
 
 }

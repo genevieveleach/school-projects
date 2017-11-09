@@ -1,0 +1,635 @@
+SOLUTION 1
+"C:\Program Files (x86)\Java\jdk1.8.0_131\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\lib\idea_rt.jar=64197:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Users\Genniy\Google Drive\CPP\school-projects\CS 420\Project 1\out\production\Project 1" EightPuzzleDriver
+Welcome to the 8-Puzzle.
+Please choose an option: 
+1: Randomly generate an 8-puzzle
+2: Enter your own 8-puzzle
+3: Read from file
+2
+Here are the position numbers for the puzzle:
+0	1	2
+3	4	5
+6	7	8
+Please enter the digits in order, including 0 as the blank tile.
+Please enter digit for position 0:
+5
+Please enter digit for position 1:
+4
+Please enter digit for position 2:
+1
+Please enter digit for position 3:
+6
+Please enter digit for position 4:
+3
+Please enter digit for position 5:
+2
+Please enter digit for position 6:
+0
+Please enter digit for position 7:
+7
+Please enter digit for position 8:
+8
+
+f(n) = 7, g(n) = 0, h(n) = 7 
+5	4	1	
+6	3	2	
+0	7	8	
+
+f(n) = 8, g(n) = 1, h(n) = 7 
+5	4	1	
+0	3	2	
+6	7	8	
+
+f(n) = 8, g(n) = 2, h(n) = 6 
+0	4	1	
+5	3	2	
+6	7	8	
+
+f(n) = 8, g(n) = 3, h(n) = 5 
+4	0	1	
+5	3	2	
+6	7	8	
+
+f(n) = 10, g(n) = 4, h(n) = 6 
+4	3	1	
+5	0	2	
+6	7	8	
+
+f(n) = 11, g(n) = 5, h(n) = 6 
+4	3	1	
+0	5	2	
+6	7	8	
+
+f(n) = 12, g(n) = 6, h(n) = 6 
+0	3	1	
+4	5	2	
+6	7	8	
+
+f(n) = 12, g(n) = 7, h(n) = 5 
+3	0	1	
+4	5	2	
+6	7	8	
+
+f(n) = 14, g(n) = 8, h(n) = 6 
+3	1	0	
+4	5	2	
+6	7	8	
+
+f(n) = 14, g(n) = 9, h(n) = 5 
+3	1	2	
+4	5	0	
+6	7	8	
+
+f(n) = 14, g(n) = 10, h(n) = 4 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 14, g(n) = 11, h(n) = 3 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 14, g(n) = 12, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Misplaced Tiles
+Elapsed time: 2249878 ns
+Nodes Generated: 279
+Steps: 12
+
+f(n) = 10, g(n) = 0, h(n) = 10 
+5	4	1	
+6	3	2	
+0	7	8	
+
+f(n) = 11, g(n) = 1, h(n) = 10 
+5	4	1	
+0	3	2	
+6	7	8	
+
+f(n) = 10, g(n) = 2, h(n) = 8 
+5	4	1	
+3	0	2	
+6	7	8	
+
+f(n) = 11, g(n) = 3, h(n) = 8 
+5	0	1	
+3	4	2	
+6	7	8	
+
+f(n) = 10, g(n) = 4, h(n) = 6 
+0	5	1	
+3	4	2	
+6	7	8	
+
+f(n) = 9, g(n) = 5, h(n) = 4 
+3	5	1	
+0	4	2	
+6	7	8	
+
+f(n) = 12, g(n) = 6, h(n) = 6 
+3	5	1	
+4	0	2	
+6	7	8	
+
+f(n) = 15, g(n) = 7, h(n) = 8 
+3	0	1	
+4	5	2	
+6	7	8	
+
+f(n) = 14, g(n) = 8, h(n) = 6 
+3	1	0	
+4	5	2	
+6	7	8	
+
+f(n) = 15, g(n) = 9, h(n) = 6 
+3	1	2	
+4	5	0	
+6	7	8	
+
+f(n) = 16, g(n) = 10, h(n) = 6 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 15, g(n) = 11, h(n) = 4 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 14, g(n) = 12, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Manhattan Distance
+Elapsed time: 666865 ns
+Nodes Generated: 118
+Steps: 12
+
+Process finished with exit code 0
+**************
+SOLUTION 2
+"C:\Program Files (x86)\Java\jdk1.8.0_131\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\lib\idea_rt.jar=64253:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Users\Genniy\Google Drive\CPP\school-projects\CS 420\Project 1\out\production\Project 1" EightPuzzleDriver
+Welcome to the 8-Puzzle.
+Please choose an option: 
+1: Randomly generate an 8-puzzle
+2: Enter your own 8-puzzle
+3: Read from file
+2
+Here are the position numbers for the puzzle:
+0	1	2
+3	4	5
+6	7	8
+Please enter the digits in order, including 0 as the blank tile.
+Please enter digit for position 0:
+5
+Please enter digit for position 1:
+4
+Please enter digit for position 2:
+1
+Please enter digit for position 3:
+6
+Please enter digit for position 4:
+0
+Please enter digit for position 5:
+3
+Please enter digit for position 6:
+7
+Please enter digit for position 7:
+8
+Please enter digit for position 8:
+2
+
+f(n) = 9, g(n) = 0, h(n) = 9 
+5	4	1	
+6	0	3	
+7	8	2	
+
+f(n) = 10, g(n) = 1, h(n) = 9 
+5	4	1	
+6	3	0	
+7	8	2	
+
+f(n) = 11, g(n) = 2, h(n) = 9 
+5	4	1	
+6	3	2	
+7	8	0	
+
+f(n) = 12, g(n) = 3, h(n) = 9 
+5	4	1	
+6	3	2	
+7	0	8	
+
+f(n) = 12, g(n) = 4, h(n) = 8 
+5	4	1	
+6	3	2	
+0	7	8	
+
+f(n) = 12, g(n) = 5, h(n) = 7 
+5	4	1	
+0	3	2	
+6	7	8	
+
+f(n) = 12, g(n) = 6, h(n) = 6 
+5	4	1	
+3	0	2	
+6	7	8	
+
+f(n) = 12, g(n) = 7, h(n) = 5 
+5	0	1	
+3	4	2	
+6	7	8	
+
+f(n) = 12, g(n) = 8, h(n) = 4 
+0	5	1	
+3	4	2	
+6	7	8	
+
+f(n) = 12, g(n) = 9, h(n) = 3 
+3	5	1	
+0	4	2	
+6	7	8	
+
+f(n) = 15, g(n) = 10, h(n) = 5 
+3	5	1	
+4	0	2	
+6	7	8	
+
+f(n) = 17, g(n) = 11, h(n) = 6 
+3	0	1	
+4	5	2	
+6	7	8	
+
+f(n) = 18, g(n) = 12, h(n) = 6 
+3	1	0	
+4	5	2	
+6	7	8	
+
+f(n) = 18, g(n) = 13, h(n) = 5 
+3	1	2	
+4	5	0	
+6	7	8	
+
+f(n) = 18, g(n) = 14, h(n) = 4 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 18, g(n) = 15, h(n) = 3 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 18, g(n) = 16, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Misplaced Tiles
+Elapsed time: 7586376 ns
+Nodes Generated: 1440
+Steps: 16
+
+f(n) = 14, g(n) = 0, h(n) = 14 
+5	4	1	
+6	0	3	
+7	8	2	
+
+f(n) = 15, g(n) = 1, h(n) = 14 
+5	4	1	
+6	3	0	
+7	8	2	
+
+f(n) = 16, g(n) = 2, h(n) = 14 
+5	4	1	
+6	3	2	
+7	8	0	
+
+f(n) = 17, g(n) = 3, h(n) = 14 
+5	4	1	
+6	3	2	
+7	0	8	
+
+f(n) = 16, g(n) = 4, h(n) = 12 
+5	4	1	
+6	3	2	
+0	7	8	
+
+f(n) = 15, g(n) = 5, h(n) = 10 
+5	4	1	
+0	3	2	
+6	7	8	
+
+f(n) = 14, g(n) = 6, h(n) = 8 
+0	4	1	
+5	3	2	
+6	7	8	
+
+f(n) = 13, g(n) = 7, h(n) = 6 
+4	0	1	
+5	3	2	
+6	7	8	
+
+f(n) = 16, g(n) = 8, h(n) = 8 
+4	3	1	
+5	0	2	
+6	7	8	
+
+f(n) = 19, g(n) = 9, h(n) = 10 
+4	3	1	
+0	5	2	
+6	7	8	
+
+f(n) = 18, g(n) = 10, h(n) = 8 
+0	3	1	
+4	5	2	
+6	7	8	
+
+f(n) = 17, g(n) = 11, h(n) = 6 
+3	0	1	
+4	5	2	
+6	7	8	
+
+f(n) = 18, g(n) = 12, h(n) = 6 
+3	1	0	
+4	5	2	
+6	7	8	
+
+f(n) = 19, g(n) = 13, h(n) = 6 
+3	1	2	
+4	5	0	
+6	7	8	
+
+f(n) = 20, g(n) = 14, h(n) = 6 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 19, g(n) = 15, h(n) = 4 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 18, g(n) = 16, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Manhattan Distance
+Elapsed time: 769976 ns
+Nodes Generated: 270
+Steps: 16
+
+Process finished with exit code 0
+**************
+SOLUTION 3
+"C:\Program Files (x86)\Java\jdk1.8.0_131\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\lib\idea_rt.jar=64263:C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Users\Genniy\Google Drive\CPP\school-projects\CS 420\Project 1\out\production\Project 1" EightPuzzleDriver
+Welcome to the 8-Puzzle.
+Please choose an option: 
+1: Randomly generate an 8-puzzle
+2: Enter your own 8-puzzle
+3: Read from file
+2
+Here are the position numbers for the puzzle:
+0	1	2
+3	4	5
+6	7	8
+Please enter the digits in order, including 0 as the blank tile.
+Please enter digit for position 0:
+5
+Please enter digit for position 1:
+8
+Please enter digit for position 2:
+0
+Please enter digit for position 3:
+3
+Please enter digit for position 4:
+6
+Please enter digit for position 5:
+2
+Please enter digit for position 6:
+1
+Please enter digit for position 7:
+4
+Please enter digit for position 8:
+7
+
+f(n) = 8, g(n) = 0, h(n) = 8 
+5	8	0	
+3	6	2	
+1	4	7	
+
+f(n) = 9, g(n) = 1, h(n) = 8 
+5	0	8	
+3	6	2	
+1	4	7	
+
+f(n) = 10, g(n) = 2, h(n) = 8 
+0	5	8	
+3	6	2	
+1	4	7	
+
+f(n) = 10, g(n) = 3, h(n) = 7 
+3	5	8	
+0	6	2	
+1	4	7	
+
+f(n) = 13, g(n) = 4, h(n) = 9 
+3	5	8	
+6	0	2	
+1	4	7	
+
+f(n) = 14, g(n) = 5, h(n) = 9 
+3	5	8	
+6	2	0	
+1	4	7	
+
+f(n) = 15, g(n) = 6, h(n) = 9 
+3	5	0	
+6	2	8	
+1	4	7	
+
+f(n) = 16, g(n) = 7, h(n) = 9 
+3	0	5	
+6	2	8	
+1	4	7	
+
+f(n) = 17, g(n) = 8, h(n) = 9 
+3	2	5	
+6	0	8	
+1	4	7	
+
+f(n) = 18, g(n) = 9, h(n) = 9 
+3	2	5	
+6	4	8	
+1	0	7	
+
+f(n) = 18, g(n) = 10, h(n) = 8 
+3	2	5	
+6	4	8	
+0	1	7	
+
+f(n) = 19, g(n) = 11, h(n) = 8 
+3	2	5	
+0	4	8	
+6	1	7	
+
+f(n) = 19, g(n) = 12, h(n) = 7 
+3	2	5	
+4	0	8	
+6	1	7	
+
+f(n) = 21, g(n) = 13, h(n) = 8 
+3	2	5	
+4	1	8	
+6	0	7	
+
+f(n) = 22, g(n) = 14, h(n) = 8 
+3	2	5	
+4	1	8	
+6	7	0	
+
+f(n) = 22, g(n) = 15, h(n) = 7 
+3	2	5	
+4	1	0	
+6	7	8	
+
+f(n) = 22, g(n) = 16, h(n) = 6 
+3	2	0	
+4	1	5	
+6	7	8	
+
+f(n) = 22, g(n) = 17, h(n) = 5 
+3	0	2	
+4	1	5	
+6	7	8	
+
+f(n) = 22, g(n) = 18, h(n) = 4 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 22, g(n) = 19, h(n) = 3 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 22, g(n) = 20, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Misplaced Tiles
+Elapsed time: 12515171 ns
+Nodes Generated: 6611
+Steps: 20
+
+f(n) = 16, g(n) = 0, h(n) = 16 
+5	8	0	
+3	6	2	
+1	4	7	
+
+f(n) = 17, g(n) = 1, h(n) = 16 
+5	0	8	
+3	6	2	
+1	4	7	
+
+f(n) = 16, g(n) = 2, h(n) = 14 
+0	5	8	
+3	6	2	
+1	4	7	
+
+f(n) = 15, g(n) = 3, h(n) = 12 
+3	5	8	
+0	6	2	
+1	4	7	
+
+f(n) = 18, g(n) = 4, h(n) = 14 
+3	5	8	
+6	0	2	
+1	4	7	
+
+f(n) = 19, g(n) = 5, h(n) = 14 
+3	5	8	
+6	2	0	
+1	4	7	
+
+f(n) = 22, g(n) = 6, h(n) = 16 
+3	5	0	
+6	2	8	
+1	4	7	
+
+f(n) = 21, g(n) = 7, h(n) = 14 
+3	0	5	
+6	2	8	
+1	4	7	
+
+f(n) = 20, g(n) = 8, h(n) = 12 
+3	2	5	
+6	0	8	
+1	4	7	
+
+f(n) = 21, g(n) = 9, h(n) = 12 
+3	2	5	
+6	4	8	
+1	0	7	
+
+f(n) = 22, g(n) = 10, h(n) = 12 
+3	2	5	
+6	4	8	
+0	1	7	
+
+f(n) = 21, g(n) = 11, h(n) = 10 
+3	2	5	
+0	4	8	
+6	1	7	
+
+f(n) = 20, g(n) = 12, h(n) = 8 
+3	2	5	
+4	0	8	
+6	1	7	
+
+f(n) = 23, g(n) = 13, h(n) = 10 
+3	2	5	
+4	1	8	
+6	0	7	
+
+f(n) = 24, g(n) = 14, h(n) = 10 
+3	2	5	
+4	1	8	
+6	7	0	
+
+f(n) = 25, g(n) = 15, h(n) = 10 
+3	2	5	
+4	1	0	
+6	7	8	
+
+f(n) = 24, g(n) = 16, h(n) = 8 
+3	2	0	
+4	1	5	
+6	7	8	
+
+f(n) = 23, g(n) = 17, h(n) = 6 
+3	0	2	
+4	1	5	
+6	7	8	
+
+f(n) = 22, g(n) = 18, h(n) = 4 
+3	1	2	
+4	0	5	
+6	7	8	
+
+f(n) = 23, g(n) = 19, h(n) = 4 
+3	1	2	
+0	4	5	
+6	7	8	
+
+f(n) = 22, g(n) = 20, h(n) = 2 
+0	1	2	
+3	4	5	
+6	7	8	
+Heuristic: Manhattan Distance
+Elapsed time: 3948250 ns
+Nodes Generated: 1165
+Steps: 20
+
+Process finished with exit code 0

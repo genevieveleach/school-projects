@@ -1,0 +1,21 @@
+Solving using Steepest Hill Climbing Algorithm.
+Final Positions: [7, 10, 8, 16, 9, 17, 20, 18, 4, 6, 14, 5, 2, 15, 13, 3, 1, 12, 19, 11, 0]
+Solved. 	Moves Used: 98 	Time: 1756997 ns
+Final Positions: [10, 7, 17, 11, 8, 4, 18, 20, 13, 6, 3, 14, 19, 5, 9, 2, 0, 15, 12, 1, 16]
+Solved. 	Moves Used: 53 	Time: 754970 ns
+Final Positions: [11, 6, 10, 20, 14, 19, 4, 7, 17, 12, 9, 2, 5, 3, 1, 16, 18, 13, 15, 8, 0]
+Solved. 	Moves Used: 103 	Time: 1314746 ns
+Final Positions: [10, 7, 17, 6, 2, 18, 5, 19, 13, 16, 12, 3, 8, 4, 1, 9, 0, 14, 11, 20, 15]
+Solved. 	Moves Used: 49 	Time: 724567 ns
+Final Positions: [12, 8, 5, 19, 10, 3, 17, 20, 13, 9, 7, 15, 1, 6, 2, 0, 18, 16, 14, 11, 4]
+Solved. 	Moves Used: 102 	Time: 1332119 ns
+Problems solved: 5/1000 	Average Cost: 81 	Average Time: 1176679 ns
+
+Solving using Genetic Algorithm.
+Final Positions: [15, 4, 8, 10, 2, 16, 14, 0, 17, 9, 7, 5, 11, 1, 18, 20, 12, 19, 13, 3, 6]
+Solved. 	Children generated: 574174 	Time: 1158634095 ns
+Final Positions: [9, 2, 14, 16, 11, 13, 4, 10, 0, 3, 20, 17, 8, 1, 7, 19, 6, 12, 15, 18, 5]
+Solved. 	Children generated: 757434 	Time: 1390489783 ns
+Final Positions: [4, 7, 15, 17, 3, 13, 9, 18, 20, 5, 11, 1, 19, 0, 16, 8, 10, 2, 6, 14, 12]
+Solved. 	Children generated: 640766 	Time: 1254313676 ns
+Problems solved: 3/3 	Average Cost: 657458 	Average Time: 1267812518 ns
