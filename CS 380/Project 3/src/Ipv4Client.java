@@ -134,7 +134,6 @@ public class Ipv4Client {
   }
 
   private static void splitAndAddToByteArr(int split, int numSplits, byte[] b, int index){
-
     for(int i = 1; i <= numSplits; i++){
       if(numSplits + index -i >= b.length)
         return;
@@ -143,4 +142,3 @@ public class Ipv4Client {
     }
   }
 }
-
