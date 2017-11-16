@@ -5,35 +5,82 @@ import java.util.Scanner;
 
 public class TicTacToeClient {
 
-  public static void main(String[] args) {
+  private static boolean inProgress = false;
+
+  public static void main(String[] args) throws Exception {
     try (Socket socket = new Socket("18.221.102.182", 38006)) {
       ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
       ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
       Scanner kb  = new Scanner(System.in);
+
+      Thread thread = new Thread(() -> {
+        try {
+          while (true) {
+            Object serverMessage = is.readObject();
+
+            if (serverMessage instanceof Message) {
+              if (!(serverMessage instanceof ErrorMessage) && !(serverMessage instanceof BoardMessage))
+                System.out.println(serverMessage);
+            }
+
+            if (serverMessage instanceof ErrorMessage) {
+              System.out.println();
+              System.out.println(((ErrorMessage) serverMessage).getError());
+              System.out.println();
+            }
+
+            if (serverMessage instanceof BoardMessage) {
+              BoardMessage board = (BoardMessage) serverMessage;
+              System.out.println("Turn: " + board.getTurn());
+              char[][] cboard = convertToChar(board.getBoard());
+              for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                  System.out.print(cboard[i][j] + " ");
+                }
+                System.out.println();
+              }
+
+              if (board.getStatus() == BoardMessage.Status.IN_PROGRESS) {
+                inProgress = true;
+              } else {
+                System.out.println(board.getStatus());
+                inProgress = false;
+                System.out.println("Goodbye!");
+                socket.close();
+                System.exit(0);
+              }
+            }
+          }
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      });
+
+
       System.out.printf("Username: ");
       String username = kb.nextLine();
       ConnectMessage connection = new ConnectMessage(username);
       os.writeObject(connection);
       CommandMessage begin = new CommandMessage(CommandMessage.Command.NEW_GAME);
       os.writeObject(begin);
-
-      BoardMessage response = (BoardMessage) is.readObject();
-      boolean errorAvoided = true;
-      while (response.getStatus() == BoardMessage.Status.IN_PROGRESS && errorAvoided) {
-        byte[][] board = response.getBoard();
-        char[][] ticTicToeBoard = convertToChar(board);
-
-        for (int i = 0; i < 3; i++) {
-          for (int j = 0; j < 3; j++) {
-            System.out.print(ticTicToeBoard[i][j] + " ");
-          }
-          System.out.println();
+      System.out.println("Game begun!");
+      inProgress = true;
+      while(inProgress) {
+        byte row = -1;
+        byte column = -1;
+        while(row < 0 || row > 2) {
+          System.out.print("Choose a row 0-2 on the board to make your move: ");
+          row = kb.nextByte();
+          kb.nextLine();
         }
-
-        //TODO: play game
-
+        while(column < 0 || column > 2) {
+          System.out.print("Choose a column 0-2 on the board to make your move:");
+          column = kb.nextByte();
+          kb.nextLine();
+        }
+        MoveMessage move = new MoveMessage(row, column);
+        os.writeObject(move);
       }
-
     } catch (Exception e) {
       e.printStackTrace();
     }
