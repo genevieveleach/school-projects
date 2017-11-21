@@ -1,4 +1,6 @@
 import javax.swing.DefaultListModel;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class IndividualUser extends User implements Observer, Subject {
 
@@ -10,12 +12,14 @@ public class IndividualUser extends User implements Observer, Subject {
   private String message;
   private boolean changeState = false;
   private long lastUpdateTime;
+  private SimpleDateFormat sdf;
 
   public IndividualUser(String id, long creationTime) {
     setID(id);
     setCreationTime(creationTime);
     this.allowsChildren = false;
     this.newsFeed = new DefaultListModel<>();
+    sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
   }
 
   public void tweet(String message) {
@@ -23,7 +27,8 @@ public class IndividualUser extends User implements Observer, Subject {
     setLastUpdateTime(System.currentTimeMillis());
     newsFeed.addElement("[" + this.getID() + "]: " + message);
     this.changeState = true;
-    System.out.println("User " + this.id + " updated at: " + lastUpdateTime);
+    Date date = new Date(lastUpdateTime);
+    System.out.println("User " + this.id + " updated at: " + sdf.format(date));
     notifyObservers();
   }
 
@@ -57,7 +62,8 @@ public class IndividualUser extends User implements Observer, Subject {
     String update = s.getUpdate(this);
     setLastUpdateTime(System.currentTimeMillis());
     this.newsFeed.addElement("[" + s.toString() + "]: " + update);
-    System.out.println("User " + this.id + " updated at: " + lastUpdateTime);
+    Date date = new Date(lastUpdateTime);
+    System.out.println("User " + this.id + " updated at: " + sdf.format(date));
   }
 
   @Override

@@ -9,6 +9,8 @@ import javax.swing.border.TitledBorder;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 
@@ -33,8 +35,10 @@ public class AdminWindow extends JFrame implements AdminPanel {
   private JPanel panel1;
   private JPanel panel2;
   private JPanel panel3;
+  private SimpleDateFormat sdf;
 
   private AdminWindow() {
+    sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setTitle("Admin Panel");
     setBounds(100, 100, 730, 580);
@@ -200,7 +204,8 @@ public class AdminWindow extends JFrame implements AdminPanel {
         }
         if (treeDataHandler.addNode(selectedNode, newUser)) {
           tree.scrollPathToVisible(new TreePath(newUser.getPath()));
-          System.out.printf("Creation time for %s: %d\n", userId, creation);
+          Date date = new Date(creation);
+          System.out.printf("Creation time for %s: %s\n", userId, sdf.format(date));
         } else {
           return;
         }
@@ -219,7 +224,8 @@ public class AdminWindow extends JFrame implements AdminPanel {
         }
         if (treeDataHandler.addNode(selectedNode, newUserGroup)) {
           tree.scrollPathToVisible(new TreePath(newUserGroup.getPath()));
-          System.out.printf("Creation time for %s: %d\n", groupId, creation);
+          Date date = new Date(creation);
+          System.out.printf("Creation time for %s: %s\n", groupId, sdf.format(date));
         } else {
           return;
         }
@@ -228,7 +234,8 @@ public class AdminWindow extends JFrame implements AdminPanel {
       if (e.getSource() == openUserViewButton) {
         openUserView(selectedNode);
         if(selectedNode instanceof IndividualUser) {
-          System.out.printf("Opened user view for %s, creation time of %s: %d\n", selectedNode.getID(), selectedNode.getID(), selectedNode.getCreationTime());
+          Date date = new Date(selectedNode.getCreationTime());
+          System.out.printf("Opened user view for %s, creation time of %s: %s\n", selectedNode.getID(), selectedNode.getID(), sdf.format(date));
         }
       } else {
         if (e.getSource() == showTotalUsersButton) {
