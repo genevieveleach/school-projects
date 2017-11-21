@@ -215,6 +215,7 @@ public class AdminWindow extends JFrame implements AdminPanel {
 
       if (e.getSource() == openUserViewButton) {
         openUserView(selectedNode);
+        System.out.printf("Opened user view for %s, creation time of %s: %d\n", selectedNode.getID(), selectedNode.getID(), selectedNode.getCreationTime());
       } else {
         if (e.getSource() == showTotalUsersButton) {
           TotalUsers totalUsers = new TotalUsers();
