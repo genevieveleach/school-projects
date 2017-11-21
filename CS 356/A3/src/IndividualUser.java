@@ -1,3 +1,5 @@
+import javafx.beans.binding.ObjectExpression;
+
 import javax.swing.DefaultListModel;
 
 public class IndividualUser extends User implements Observer, Subject {
@@ -23,8 +25,8 @@ public class IndividualUser extends User implements Observer, Subject {
     setUpdateTime(System.currentTimeMillis());
     newsFeed.addElement("[" + this.getID() + "]: " + message);
     this.changeState = true;
-    notifyObservers();
     System.out.println("User " + this.id + " updated at: " + updateTime);
+    notifyObservers();
   }
 
   public Object[] getMessages() {
@@ -78,9 +80,14 @@ public class IndividualUser extends User implements Observer, Subject {
   @Override
   public void notifyObservers() {
     if(changeState) {
-      for(Object user : followers.toArray()) {
-        ((Observer) user).update(this);
+      String lastUpdated = "";
+      Object[] followerArray = followers.toArray();
+      for(int i = 0; i < followerArray.length; i++) {
+        IndividualUser user = (IndividualUser)followerArray[i];
+        user.update(this);
+        lastUpdated = user.getID();
       }
+      System.out.println("Last updated user: " + lastUpdated);
       changeState = false;
     }
     else {
