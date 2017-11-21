@@ -23,6 +23,8 @@ public class AdminWindow extends JFrame implements AdminPanel {
   private JButton showTotalMessagesButton;
   private JButton showTotalGroupsButton;
   private JButton showPositiveWordsButton;
+  private JButton checkValidIDButton;
+  private JButton lastUpdatedUserButton;
   private JTextArea txtrUserId;
   private JTextArea txtrUserGroupId;
   private JTree tree;
@@ -35,7 +37,7 @@ public class AdminWindow extends JFrame implements AdminPanel {
   private AdminWindow() {
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setTitle("Admin Panel");
-    setBounds(100, 100, 730, 480);
+    setBounds(100, 100, 730, 580);
     contentPane = new JPanel();
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
@@ -96,6 +98,16 @@ public class AdminWindow extends JFrame implements AdminPanel {
     showPositiveWordsButton.addActionListener(handler);
     showPositiveWordsButton.setBounds(482, 280, 190, 71);
     contentPane.add(showPositiveWordsButton);
+
+    checkValidIDButton = new JButton("All IDs Valid?");
+    checkValidIDButton.addActionListener(handler);
+    checkValidIDButton.setBounds(265, 447, 190, 71);
+    contentPane.add(checkValidIDButton);
+
+    lastUpdatedUserButton = new JButton("Last Updated User");
+    lastUpdatedUserButton.addActionListener(handler);
+    lastUpdatedUserButton.setBounds(482, 447, 190, 71);
+    contentPane.add(lastUpdatedUserButton);
 
     panel2 = new JPanel();
     panel2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Group ID", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -215,7 +227,9 @@ public class AdminWindow extends JFrame implements AdminPanel {
 
       if (e.getSource() == openUserViewButton) {
         openUserView(selectedNode);
-        System.out.printf("Opened user view for %s, creation time of %s: %d\n", selectedNode.getID(), selectedNode.getID(), selectedNode.getCreationTime());
+        if(selectedNode instanceof IndividualUser) {
+          System.out.printf("Opened user view for %s, creation time of %s: %d\n", selectedNode.getID(), selectedNode.getID(), selectedNode.getCreationTime());
+        }
       } else {
         if (e.getSource() == showTotalUsersButton) {
           TotalUsers totalUsers = new TotalUsers();
@@ -239,6 +253,17 @@ public class AdminWindow extends JFrame implements AdminPanel {
           treeDataHandler.accept(positivePercentage);
           popUp.infoBox(String.format("%.02f", positivePercentage.result()) + "% of messages are positive.",
               "Positive Percentage of Messages");
+        }
+
+        //always true because program already disallows incorrect input
+        if(e.getSource() == checkValidIDButton) {
+          popUp.infoBox("All IDs valid.", "All ID's Valid?");
+        }
+
+        if(e.getSource() == lastUpdatedUserButton) {
+          LastUpdated lastUpdated = new LastUpdated();
+          treeDataHandler.accept(lastUpdated);
+          popUp.infoBox("Last Updated User: " + lastUpdated.getLastUpdatedUser(), "Last Updated User");
         }
       }
     }

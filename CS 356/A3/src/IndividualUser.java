@@ -1,5 +1,3 @@
-import javafx.beans.binding.ObjectExpression;
-
 import javax.swing.DefaultListModel;
 
 public class IndividualUser extends User implements Observer, Subject {
@@ -11,7 +9,7 @@ public class IndividualUser extends User implements Observer, Subject {
   private DefaultListModel<String> newsFeed;
   private String message;
   private boolean changeState = false;
-  private long updateTime;
+  private long lastUpdateTime;
 
   public IndividualUser(String id, long creationTime) {
     setID(id);
@@ -22,10 +20,10 @@ public class IndividualUser extends User implements Observer, Subject {
 
   public void tweet(String message) {
     this.message = message;
-    setUpdateTime(System.currentTimeMillis());
+    setLastUpdateTime(System.currentTimeMillis());
     newsFeed.addElement("[" + this.getID() + "]: " + message);
     this.changeState = true;
-    System.out.println("User " + this.id + " updated at: " + updateTime);
+    System.out.println("User " + this.id + " updated at: " + lastUpdateTime);
     notifyObservers();
   }
 
@@ -57,9 +55,9 @@ public class IndividualUser extends User implements Observer, Subject {
   @Override
   public void update(Subject s) {
     String update = s.getUpdate(this);
-    setUpdateTime(System.currentTimeMillis());
+    setLastUpdateTime(System.currentTimeMillis());
     this.newsFeed.addElement("[" + s.toString() + "]: " + update);
-    System.out.println("User " + this.id + " updated at: " + updateTime);
+    System.out.println("User " + this.id + " updated at: " + lastUpdateTime);
   }
 
   @Override
@@ -80,14 +78,9 @@ public class IndividualUser extends User implements Observer, Subject {
   @Override
   public void notifyObservers() {
     if(changeState) {
-      String lastUpdated = "";
-      Object[] followerArray = followers.toArray();
-      for(int i = 0; i < followerArray.length; i++) {
-        IndividualUser user = (IndividualUser)followerArray[i];
-        user.update(this);
-        lastUpdated = user.getID();
+      for(Object user : followers.toArray()) {
+        ((Observer) user).update(this);
       }
-      System.out.println("Last updated user: " + lastUpdated);
       changeState = false;
     }
     else {
@@ -130,13 +123,13 @@ public class IndividualUser extends User implements Observer, Subject {
   }
 
   @Override
-  public void setUpdateTime(long updateTime) {
-    this.updateTime = updateTime;
+  public void setLastUpdateTime(long lastUpdateTime) {
+    this.lastUpdateTime = lastUpdateTime;
   }
 
   @Override
-  public long getUpdateTime() {
-    return updateTime;
+  public long getLastUpdateTime() {
+    return lastUpdateTime;
   }
 
   @Override
