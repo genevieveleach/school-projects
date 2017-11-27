@@ -1,4 +1,6 @@
 import javax.swing.DefaultListModel;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class IndividualUser extends User implements Observer, Subject {
 
@@ -9,22 +11,25 @@ public class IndividualUser extends User implements Observer, Subject {
   private DefaultListModel<String> newsFeed;
   private String message;
   private boolean changeState = false;
-  private long updateTime;
+  private long lastUpdateTime;
+  private SimpleDateFormat sdf;
 
   public IndividualUser(String id, long creationTime) {
     setID(id);
     setCreationTime(creationTime);
     this.allowsChildren = false;
     this.newsFeed = new DefaultListModel<>();
+    sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
   }
 
   public void tweet(String message) {
     this.message = message;
-    setUpdateTime(System.currentTimeMillis());
+    setLastUpdateTime(System.currentTimeMillis());
     newsFeed.addElement("[" + this.getID() + "]: " + message);
     this.changeState = true;
+    Date date = new Date(lastUpdateTime);
+    System.out.println("User " + this.id + " updated at: " + sdf.format(date));
     notifyObservers();
-    System.out.println("User " + this.id + " updated at: " + updateTime);
   }
 
   public Object[] getMessages() {
@@ -55,9 +60,10 @@ public class IndividualUser extends User implements Observer, Subject {
   @Override
   public void update(Subject s) {
     String update = s.getUpdate(this);
-    setUpdateTime(System.currentTimeMillis());
+    setLastUpdateTime(System.currentTimeMillis());
     this.newsFeed.addElement("[" + s.toString() + "]: " + update);
-    System.out.println("User " + this.id + " updated at: " + updateTime);
+    Date date = new Date(lastUpdateTime);
+    System.out.println("User " + this.id + " updated at: " + sdf.format(date));
   }
 
   @Override
@@ -123,13 +129,13 @@ public class IndividualUser extends User implements Observer, Subject {
   }
 
   @Override
-  public void setUpdateTime(long updateTime) {
-    this.updateTime = updateTime;
+  public void setLastUpdateTime(long lastUpdateTime) {
+    this.lastUpdateTime = lastUpdateTime;
   }
 
   @Override
-  public long getUpdateTime() {
-    return updateTime;
+  public long getLastUpdateTime() {
+    return lastUpdateTime;
   }
 
   @Override

@@ -43,12 +43,12 @@ public class GroupUser extends User {
   }
 
   @Override
-  public void setUpdateTime(long updateTime) {
-    this.updateTime = updateTime;
+  public void setLastUpdateTime(long lastUpdateTime) {
+    this.updateTime = lastUpdateTime;
   }
 
   @Override
-  public long getUpdateTime() {
+  public long getLastUpdateTime() {
     return updateTime;
   }
 
