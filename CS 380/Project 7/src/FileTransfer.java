@@ -50,10 +50,8 @@ public class FileTransfer {
     try {
       ServerSocket serverSocket = new ServerSocket(portNumber);
       Socket clientSocket = serverSocket.accept();
-      System.out.println("Client connected.");
-      ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
       ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
-      System.out.println("Created ois and oos.");
+      ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
       Key sessionKey = null;
       int chunkAmount = 0;
       int seqNum = -1;
@@ -123,21 +121,17 @@ public class FileTransfer {
       System.out.println("Connected to server: " + hostAddr + "/" + socket.getInetAddress().getHostAddress());;
       ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
       ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-      System.out.println("Created ois and oos.");
       KeyGenerator keygen = KeyGenerator.getInstance("AES");
       keygen.init(128);
       SecretKey sessionKey = keygen.generateKey();
-      System.out.println("Generated session key.");
       Cipher cipher = Cipher.getInstance("RSA");
       PublicKey publicKey = (PublicKey) new ObjectInputStream(new FileInputStream(fileName)).readObject();
       cipher.init(Cipher.WRAP_MODE, publicKey);
       byte[] wrappedKey = cipher.wrap(sessionKey);
-      System.out.println("Key wrapped.");
       while(true) {
         System.out.printf("Enter path: ");
         String path = kb.nextLine();
         if(!new File(path).exists()) {
-          throw new Exception("Invalid path.");
         }
         int chunkSize = 1024;
         try {
