@@ -1,3 +1,5 @@
+//Genevieve Leach and Lloyd Zhang
+
 import javax.crypto.*;
 import java.io.*;
 import java.net.ServerSocket;
@@ -65,7 +67,7 @@ public class FileTransfer {
           break;
         } else if(input.getType().equals(MessageType.START)) {
           try {
-            chunkAmount = (int) (((StartMessage)input).getSize() / ((StartMessage)input).getChunkSize());
+            chunkAmount = (int) Math.ceil((double)((StartMessage)input).getSize() / ((StartMessage)input).getChunkSize());
             ObjectInputStream fileIS = new ObjectInputStream(new FileInputStream(fileName));
             PrivateKey privateKey = (PrivateKey) fileIS.readObject();
             Cipher cipher = Cipher.getInstance("RSA");
@@ -88,19 +90,19 @@ public class FileTransfer {
               byte[] decryptedData = cipher.doFinal(((Chunk)input).getData());
               CRC32 crc = new CRC32();
               crc.update(decryptedData);
-              if(crc.getValue() == ((Chunk)input).getCrc()) {
+              if((int)crc.getValue() == ((Chunk)input).getCrc()) {
                 seqNum++;
                 if(seqNum == 1) {
-                  new FileOutputStream("test.txt").write(decryptedData);
+                  new FileOutputStream("test2.txt").write(decryptedData);
                 } else {
-                  new FileOutputStream("test.txt", true).write(decryptedData);
+                  new FileOutputStream("test2.txt", true).write(decryptedData);
                 }
                 System.out.printf("Chunk recieved[%d/%d].\n", seqNum, chunkAmount);
                 oos.writeObject(new AckMessage(seqNum));
               }
               if(seqNum == chunkAmount) {
                 System.out.println("Transfer complete.");
-                System.out.println("Output path: test.txt");
+                System.out.println("Output path: test2.txt");
                 sessionKey = null;
                 chunkAmount = 0;
                 seqNum = -1;
@@ -142,7 +144,7 @@ public class FileTransfer {
         }
         StartMessage startMessage = new StartMessage(path, wrappedKey, chunkSize);
         oos.writeObject(startMessage);
-        int chunkAmount = (int) (startMessage.getSize()/startMessage.getChunkSize());
+        int chunkAmount = (int) Math.ceil((double)startMessage.getSize()/startMessage.getChunkSize());
         int seqNum = ((AckMessage)ois.readObject()).getSeq();
         if(seqNum == 0) {
           File file = new File(path);
@@ -161,6 +163,7 @@ public class FileTransfer {
             System.out.printf("Chunks completed [%d/%d].\n", seqNum, chunkAmount);
           }
         }
+        kb = new Scanner(System.in);
         System.out.printf("Would you like to TRANSFER a new file or DISCONNECT: ");
         String choice = kb.nextLine();
         if(choice.equalsIgnoreCase("TRANSFER")) {
