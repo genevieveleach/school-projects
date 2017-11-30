@@ -22,19 +22,8 @@ public class WebServer {
           BufferedReader fileBR = new BufferedReader(new FileReader(file));
           if(fileName.equals("www/hello.html")) {
             pw.println("HTTP/1.1 200 OK");
-            pw.println("Content-type: test/html");
-            pw.println("Content-length: " + file.length());
-            read = fileBR.readLine();
-            while(read != null) {
-              pw.println(read);
-              read = fileBR.readLine();
-            }
-            fileBR.close();
-            pw.close();
-          } else {
-            pw.println("HTTP/1.1 404 Not Found");
             pw.println("Content-type: text/html");
-            pw.println("Content length: " + file.length());
+            pw.println("Content-length: " + file.length() + "\n");
             read = fileBR.readLine();
             while(read != null) {
               pw.println(read);
@@ -43,8 +32,25 @@ public class WebServer {
             fileBR.close();
             pw.close();
           }
-        } catch (Exception e) {
-          e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            try{
+              File file = new File("www/error.html");
+              BufferedReader fileBR = new BufferedReader(new FileReader(file));
+              pw.println("HTTP/1.1 404 Not Found");
+              pw.println("Content-type: text/html");
+              pw.println("Content length: " + file.length() + "\n");
+              String read = fileBR.readLine();
+              while(read != null) {
+                pw.println(read);
+                read = fileBR.readLine();
+              }
+              fileBR.close();
+              pw.close();
+            } catch (Exception ex){
+              e.printStackTrace();
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
       };
 
