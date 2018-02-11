@@ -3,37 +3,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 
 class FirstComeFirstServe extends SchedulerAlg {
 
-  private Queue<Process> processes = new LinkedList<>();
-
-  FirstComeFirstServe(ArrayList<Process> list, String fileName) throws IOException {
+    FirstComeFirstServe(ArrayList<Process> list, String fileName) throws IOException {
+    processes = new LinkedList<>();
     processes.addAll(list);
     this.fileName = fileName;
     writeHeaderToFile(fileName);
     this.totalProcesses = list.size();
-  }
-
-  void run() throws IOException {
-    int prevPid = 0;
-    boolean switchStatement = false;
-    while (!processes.isEmpty()) {
-      Process currentProcess = processes.poll();
-      if(switchStatement) {
-        writeSwitchToFile(fileName, prevPid, currentProcess.getPid(), cpuTime, cpuTime+SWITCH_TIME);
-        cpuTime += SWITCH_TIME;
-      }
-      int startingCPU = cpuTime;
-      cpuTime += currentProcess.getBurstTime();
-      writeDataToFile(fileName, currentProcess.getPid(), startingCPU, cpuTime, currentProcess.getBurstTime(), 0, cpuTime);
-      totalCompletionTime += cpuTime;
-      writeFinishedProcessToFile(fileName, currentProcess.getPid());
-      prevPid = currentProcess.getPid();
-      switchStatement = true;
-    }
-    writeAverageToFile(fileName, totalCompletionTime/totalProcesses);
   }
 
   @Override

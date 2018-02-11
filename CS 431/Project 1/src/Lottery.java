@@ -2,15 +2,81 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 class Lottery extends SchedulerAlg{
 
-  Lottery(ArrayList<Process> processList, int timeQuantum, String fileName) {
+  private ArrayList<Process> processes = new ArrayList<>();
+  private final int TIME_QUANTUM;
 
+  Lottery(ArrayList<Process> processList, int timeQuantum, String fileName) throws IOException {
+    for (Process p : processList) {
+      processes.add(new Process(p));
+    }
+    this.TIME_QUANTUM = timeQuantum;
+    this.fileName = fileName;
+    this.totalProcesses = processList.size();
+    writeHeaderToFile(fileName);
   }
 
-  void run() {
+  @Override
+  void run() throws IOException {
+    int prevPid = 0;
+    while(!processes.isEmpty()) {
+      Process currentProcess = processes.get(ticket());
+      if (prevPid != currentProcess.getPid() && prevPid != 0) {
+        writeSwitchToFile(fileName, prevPid, currentProcess.getPid(), cpuTime, cpuTime + SWITCH_TIME);
+        cpuTime += SWITCH_TIME;
+      }
+      int startingCPU = cpuTime;
+      int startingBurstTime = currentProcess.getBurstTime();
+      if ((startingBurstTime - TIME_QUANTUM) <= 0) {
+        cpuTime += startingBurstTime;
+        currentProcess.setBurstTime(0);
+      } else {
+        cpuTime += TIME_QUANTUM;
+        currentProcess.setBurstTime(startingBurstTime - TIME_QUANTUM);
+      }
+      if (currentProcess.getBurstTime() == 0) {
+        writeDataToFile(fileName, currentProcess.getPid(), startingCPU, cpuTime, startingBurstTime, currentProcess.getBurstTime(), cpuTime);
+        writeFinishedProcessToFile(fileName, currentProcess.getPid());
+        totalCompletionTime += cpuTime;
+        processes.remove(currentProcess);
+      } else {
+        writeDataToFile(fileName, currentProcess.getPid(), startingCPU, cpuTime, startingBurstTime, currentProcess.getBurstTime(), 0);
+      }
+      prevPid = currentProcess.getPid();
+    }
+    writeAverageToFile(fileName, totalCompletionTime/totalProcesses);
+  }
 
+  private int ticket() {
+    Random rand = new Random();
+    int ticket = rand.nextInt(calculateTotalPriority()) + 1;
+    System.out.println("Ticket chosen: " + ticket);
+    do {
+      for (int i = 0; i < processes.size(); i++) {
+        ticket -= processes.get(i).getPriority();
+        if (ticket <= 0) {
+          System.out.println("Process chosen: " + processes.get(i).getPid());
+          return i;
+        }
+      }
+    } while (ticket >= 0);
+    try {
+      throw new Exception("Reached end without choosing a process. Check lottery/ticket method.");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return -1;
+  }
+
+  private int calculateTotalPriority() {
+    int priority = 0;
+    for (Process p : processes) {
+      priority += p.getPriority();
+    }
+    return priority;
   }
 
   @Override

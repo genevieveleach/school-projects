@@ -9,6 +9,12 @@ class Process implements Comparable<Process> {
     this.priority = priority;
   }
 
+  Process(Process p) {
+    this.pid = p.pid;
+    this.burstTime = p.burstTime;
+    this.priority = p.priority;
+  }
+
   void setPid(int pid) {
     this.pid = pid;
   }

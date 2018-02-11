@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Queue;
 
 abstract class SchedulerAlg {
 
@@ -7,8 +8,28 @@ abstract class SchedulerAlg {
   int totalCompletionTime;
   int totalProcesses;
   String fileName;
+  Queue<Process> processes;
 
-  abstract void run() throws IOException;
+  //FCFS and SJF uses same run(), RR and Lottery override it
+  void run() throws IOException {
+    int prevPid = 0;
+    boolean switchStatement = false;
+    while (!processes.isEmpty()) {
+      Process currentProcess = processes.poll();
+      if(switchStatement) {
+        writeSwitchToFile(fileName, prevPid, currentProcess.getPid(), cpuTime, cpuTime+SWITCH_TIME);
+        cpuTime += SWITCH_TIME;
+      }
+      int startingCPU = cpuTime;
+      cpuTime += currentProcess.getBurstTime();
+      writeDataToFile(fileName, currentProcess.getPid(), startingCPU, cpuTime, currentProcess.getBurstTime(), 0, cpuTime);
+      totalCompletionTime += cpuTime;
+      writeFinishedProcessToFile(fileName, currentProcess.getPid());
+      prevPid = currentProcess.getPid();
+      switchStatement = true;
+    }
+    writeAverageToFile(fileName, totalCompletionTime/totalProcesses);
+  }
 
   abstract void writeFinishedProcessToFile(String fileName, int pid) throws IOException;
 
