@@ -88,7 +88,7 @@ class RoundRobin extends SchedulerAlg {
 
   @Override
   void writeHeaderToFile(String fileName) throws IOException {
-    System.out.println("Creating output file for RR" + TIME_QUANTUM + "-" + ".csv");
+    System.out.println("Creating output file for RR" + TIME_QUANTUM + "-" + fileName + ".csv");
     BufferedWriter bw = new BufferedWriter(new FileWriter("./output/RR" + TIME_QUANTUM + "-" + fileName + ".csv", false));
     bw.write("Process ID,Starting CPU Time,Ending CPU Time,Starting Burst Time,Ending Burst Time,Completion Time,,Starting CPU Time,Ending CPU Time\n");
     bw.flush();
