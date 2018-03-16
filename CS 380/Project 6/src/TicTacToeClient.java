@@ -1,6 +1,7 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TicTacToeClient {
@@ -33,10 +34,12 @@ public class TicTacToeClient {
               BoardMessage board = (BoardMessage) serverMessage;
               System.out.println("Turn: " + board.getTurn());
               char[][] cboard = convertToChar(board.getBoard());
+              System.out.println("Board:");
               for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                   System.out.print(cboard[i][j] + " ");
                 }
+                System.out.println(Arrays.deepToString(cboard));
                 System.out.println();
               }
 
@@ -56,7 +59,6 @@ public class TicTacToeClient {
         }
       });
 
-
       System.out.printf("Username: ");
       String username = kb.nextLine();
       ConnectMessage connection = new ConnectMessage(username);
@@ -65,6 +67,7 @@ public class TicTacToeClient {
       os.writeObject(begin);
       System.out.println("Game begun!");
       inProgress = true;
+      thread.run();
       while(inProgress) {
         byte row = -1;
         byte column = -1;
