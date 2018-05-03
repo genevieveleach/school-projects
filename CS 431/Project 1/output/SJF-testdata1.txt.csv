@@ -1,0 +1,29 @@
+Process ID,Starting CPU Time,Ending CPU Time,Starting Burst Time,Ending Burst Time,Completion Time,,Starting CPU Time,Ending CPU Time
+6,0,130,130,0,130
+,,,,,,Process 6 finished
+,,,,,,Switching Processes: 6 --> 5,130,133
+5,133,355,222,0,355
+,,,,,,Process 5 finished
+,,,,,,Switching Processes: 5 --> 3,355,358
+3,358,589,231,0,589
+,,,,,,Process 3 finished
+,,,,,,Switching Processes: 3 --> 7,589,592
+7,592,909,317,0,909
+,,,,,,Process 7 finished
+,,,,,,Switching Processes: 7 --> 4,909,912
+4,912,1249,337,0,1249
+,,,,,,Process 4 finished
+,,,,,,Switching Processes: 4 --> 8,1249,1252
+8,1252,1691,439,0,1691
+,,,,,,Process 8 finished
+,,,,,,Switching Processes: 8 --> 2,1691,1694
+2,1694,2182,488,0,2182
+,,,,,,Process 2 finished
+,,,,,,Switching Processes: 2 --> 1,2182,2185
+1,2185,2809,624,0,2809
+,,,,,,Process 1 finished
+,,,,,,Switching Processes: 1 --> 9,2809,2812
+9,2812,3754,942,0,3754
+,,,,,,Process 9 finished
+
+,,,,,,Average Completion Time: 1518

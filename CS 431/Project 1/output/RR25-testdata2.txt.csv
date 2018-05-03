@@ -1,0 +1,285 @@
+Process ID,Starting CPU Time,Ending CPU Time,Starting Burst Time,Ending Burst Time,Completion Time,,Starting CPU Time,Ending CPU Time
+1,0,25,596,571,0
+,,,,,,Switching Processes: 1 --> 2,25,28
+2,28,53,222,197,0
+,,,,,,Switching Processes: 2 --> 3,53,56
+3,56,81,123,98,0
+,,,,,,Switching Processes: 3 --> 4,81,84
+4,84,109,209,184,0
+,,,,,,Switching Processes: 4 --> 5,109,112
+5,112,137,609,584,0
+,,,,,,Switching Processes: 5 --> 6,137,140
+6,140,165,814,789,0
+,,,,,,Switching Processes: 6 --> 7,165,168
+7,168,193,204,179,0
+,,,,,,Switching Processes: 7 --> 8,193,196
+8,196,221,308,283,0
+,,,,,,Switching Processes: 8 --> 9,221,224
+9,224,249,333,308,0
+,,,,,,Switching Processes: 9 --> 1,249,252
+1,252,277,571,546,0
+,,,,,,Switching Processes: 1 --> 2,277,280
+2,280,305,197,172,0
+,,,,,,Switching Processes: 2 --> 3,305,308
+3,308,333,98,73,0
+,,,,,,Switching Processes: 3 --> 4,333,336
+4,336,361,184,159,0
+,,,,,,Switching Processes: 4 --> 5,361,364
+5,364,389,584,559,0
+,,,,,,Switching Processes: 5 --> 6,389,392
+6,392,417,789,764,0
+,,,,,,Switching Processes: 6 --> 7,417,420
+7,420,445,179,154,0
+,,,,,,Switching Processes: 7 --> 8,445,448
+8,448,473,283,258,0
+,,,,,,Switching Processes: 8 --> 9,473,476
+9,476,501,308,283,0
+,,,,,,Switching Processes: 9 --> 1,501,504
+1,504,529,546,521,0
+,,,,,,Switching Processes: 1 --> 2,529,532
+2,532,557,172,147,0
+,,,,,,Switching Processes: 2 --> 3,557,560
+3,560,585,73,48,0
+,,,,,,Switching Processes: 3 --> 4,585,588
+4,588,613,159,134,0
+,,,,,,Switching Processes: 4 --> 5,613,616
+5,616,641,559,534,0
+,,,,,,Switching Processes: 5 --> 6,641,644
+6,644,669,764,739,0
+,,,,,,Switching Processes: 6 --> 7,669,672
+7,672,697,154,129,0
+,,,,,,Switching Processes: 7 --> 8,697,700
+8,700,725,258,233,0
+,,,,,,Switching Processes: 8 --> 9,725,728
+9,728,753,283,258,0
+,,,,,,Switching Processes: 9 --> 1,753,756
+1,756,781,521,496,0
+,,,,,,Switching Processes: 1 --> 2,781,784
+2,784,809,147,122,0
+,,,,,,Switching Processes: 2 --> 3,809,812
+3,812,837,48,23,0
+,,,,,,Switching Processes: 3 --> 4,837,840
+4,840,865,134,109,0
+,,,,,,Switching Processes: 4 --> 5,865,868
+5,868,893,534,509,0
+,,,,,,Switching Processes: 5 --> 6,893,896
+6,896,921,739,714,0
+,,,,,,Switching Processes: 6 --> 7,921,924
+7,924,949,129,104,0
+,,,,,,Switching Processes: 7 --> 8,949,952
+8,952,977,233,208,0
+,,,,,,Switching Processes: 8 --> 9,977,980
+9,980,1005,258,233,0
+,,,,,,Switching Processes: 9 --> 1,1005,1008
+1,1008,1033,496,471,0
+,,,,,,Switching Processes: 1 --> 2,1033,1036
+2,1036,1061,122,97,0
+,,,,,,Switching Processes: 2 --> 3,1061,1064
+3,1064,1087,23,0,1087
+,,,,,,Process 3 finished
+,,,,,,Switching Processes: 3 --> 4,1087,1090
+4,1090,1115,109,84,0
+,,,,,,Switching Processes: 4 --> 5,1115,1118
+5,1118,1143,509,484,0
+,,,,,,Switching Processes: 5 --> 6,1143,1146
+6,1146,1171,714,689,0
+,,,,,,Switching Processes: 6 --> 7,1171,1174
+7,1174,1199,104,79,0
+,,,,,,Switching Processes: 7 --> 8,1199,1202
+8,1202,1227,208,183,0
+,,,,,,Switching Processes: 8 --> 9,1227,1230
+9,1230,1255,233,208,0
+,,,,,,Switching Processes: 9 --> 1,1255,1258
+1,1258,1283,471,446,0
+,,,,,,Switching Processes: 1 --> 2,1283,1286
+2,1286,1311,97,72,0
+,,,,,,Switching Processes: 2 --> 4,1311,1314
+4,1314,1339,84,59,0
+,,,,,,Switching Processes: 4 --> 5,1339,1342
+5,1342,1367,484,459,0
+,,,,,,Switching Processes: 5 --> 6,1367,1370
+6,1370,1395,689,664,0
+,,,,,,Switching Processes: 6 --> 7,1395,1398
+7,1398,1423,79,54,0
+,,,,,,Switching Processes: 7 --> 8,1423,1426
+8,1426,1451,183,158,0
+,,,,,,Switching Processes: 8 --> 9,1451,1454
+9,1454,1479,208,183,0
+,,,,,,Switching Processes: 9 --> 1,1479,1482
+1,1482,1507,446,421,0
+,,,,,,Switching Processes: 1 --> 2,1507,1510
+2,1510,1535,72,47,0
+,,,,,,Switching Processes: 2 --> 4,1535,1538
+4,1538,1563,59,34,0
+,,,,,,Switching Processes: 4 --> 5,1563,1566
+5,1566,1591,459,434,0
+,,,,,,Switching Processes: 5 --> 6,1591,1594
+6,1594,1619,664,639,0
+,,,,,,Switching Processes: 6 --> 7,1619,1622
+7,1622,1647,54,29,0
+,,,,,,Switching Processes: 7 --> 8,1647,1650
+8,1650,1675,158,133,0
+,,,,,,Switching Processes: 8 --> 9,1675,1678
+9,1678,1703,183,158,0
+,,,,,,Switching Processes: 9 --> 1,1703,1706
+1,1706,1731,421,396,0
+,,,,,,Switching Processes: 1 --> 2,1731,1734
+2,1734,1759,47,22,0
+,,,,,,Switching Processes: 2 --> 4,1759,1762
+4,1762,1787,34,9,0
+,,,,,,Switching Processes: 4 --> 5,1787,1790
+5,1790,1815,434,409,0
+,,,,,,Switching Processes: 5 --> 6,1815,1818
+6,1818,1843,639,614,0
+,,,,,,Switching Processes: 6 --> 7,1843,1846
+7,1846,1871,29,4,0
+,,,,,,Switching Processes: 7 --> 8,1871,1874
+8,1874,1899,133,108,0
+,,,,,,Switching Processes: 8 --> 9,1899,1902
+9,1902,1927,158,133,0
+,,,,,,Switching Processes: 9 --> 1,1927,1930
+1,1930,1955,396,371,0
+,,,,,,Switching Processes: 1 --> 2,1955,1958
+2,1958,1980,22,0,1980
+,,,,,,Process 2 finished
+,,,,,,Switching Processes: 2 --> 4,1980,1983
+4,1983,1992,9,0,1992
+,,,,,,Process 4 finished
+,,,,,,Switching Processes: 4 --> 5,1992,1995
+5,1995,2020,409,384,0
+,,,,,,Switching Processes: 5 --> 6,2020,2023
+6,2023,2048,614,589,0
+,,,,,,Switching Processes: 6 --> 7,2048,2051
+7,2051,2055,4,0,2055
+,,,,,,Process 7 finished
+,,,,,,Switching Processes: 7 --> 8,2055,2058
+8,2058,2083,108,83,0
+,,,,,,Switching Processes: 8 --> 9,2083,2086
+9,2086,2111,133,108,0
+,,,,,,Switching Processes: 9 --> 1,2111,2114
+1,2114,2139,371,346,0
+,,,,,,Switching Processes: 1 --> 5,2139,2142
+5,2142,2167,384,359,0
+,,,,,,Switching Processes: 5 --> 6,2167,2170
+6,2170,2195,589,564,0
+,,,,,,Switching Processes: 6 --> 8,2195,2198
+8,2198,2223,83,58,0
+,,,,,,Switching Processes: 8 --> 9,2223,2226
+9,2226,2251,108,83,0
+,,,,,,Switching Processes: 9 --> 1,2251,2254
+1,2254,2279,346,321,0
+,,,,,,Switching Processes: 1 --> 5,2279,2282
+5,2282,2307,359,334,0
+,,,,,,Switching Processes: 5 --> 6,2307,2310
+6,2310,2335,564,539,0
+,,,,,,Switching Processes: 6 --> 8,2335,2338
+8,2338,2363,58,33,0
+,,,,,,Switching Processes: 8 --> 9,2363,2366
+9,2366,2391,83,58,0
+,,,,,,Switching Processes: 9 --> 1,2391,2394
+1,2394,2419,321,296,0
+,,,,,,Switching Processes: 1 --> 5,2419,2422
+5,2422,2447,334,309,0
+,,,,,,Switching Processes: 5 --> 6,2447,2450
+6,2450,2475,539,514,0
+,,,,,,Switching Processes: 6 --> 8,2475,2478
+8,2478,2503,33,8,0
+,,,,,,Switching Processes: 8 --> 9,2503,2506
+9,2506,2531,58,33,0
+,,,,,,Switching Processes: 9 --> 1,2531,2534
+1,2534,2559,296,271,0
+,,,,,,Switching Processes: 1 --> 5,2559,2562
+5,2562,2587,309,284,0
+,,,,,,Switching Processes: 5 --> 6,2587,2590
+6,2590,2615,514,489,0
+,,,,,,Switching Processes: 6 --> 8,2615,2618
+8,2618,2626,8,0,2626
+,,,,,,Process 8 finished
+,,,,,,Switching Processes: 8 --> 9,2626,2629
+9,2629,2654,33,8,0
+,,,,,,Switching Processes: 9 --> 1,2654,2657
+1,2657,2682,271,246,0
+,,,,,,Switching Processes: 1 --> 5,2682,2685
+5,2685,2710,284,259,0
+,,,,,,Switching Processes: 5 --> 6,2710,2713
+6,2713,2738,489,464,0
+,,,,,,Switching Processes: 6 --> 9,2738,2741
+9,2741,2749,8,0,2749
+,,,,,,Process 9 finished
+,,,,,,Switching Processes: 9 --> 1,2749,2752
+1,2752,2777,246,221,0
+,,,,,,Switching Processes: 1 --> 5,2777,2780
+5,2780,2805,259,234,0
+,,,,,,Switching Processes: 5 --> 6,2805,2808
+6,2808,2833,464,439,0
+,,,,,,Switching Processes: 6 --> 1,2833,2836
+1,2836,2861,221,196,0
+,,,,,,Switching Processes: 1 --> 5,2861,2864
+5,2864,2889,234,209,0
+,,,,,,Switching Processes: 5 --> 6,2889,2892
+6,2892,2917,439,414,0
+,,,,,,Switching Processes: 6 --> 1,2917,2920
+1,2920,2945,196,171,0
+,,,,,,Switching Processes: 1 --> 5,2945,2948
+5,2948,2973,209,184,0
+,,,,,,Switching Processes: 5 --> 6,2973,2976
+6,2976,3001,414,389,0
+,,,,,,Switching Processes: 6 --> 1,3001,3004
+1,3004,3029,171,146,0
+,,,,,,Switching Processes: 1 --> 5,3029,3032
+5,3032,3057,184,159,0
+,,,,,,Switching Processes: 5 --> 6,3057,3060
+6,3060,3085,389,364,0
+,,,,,,Switching Processes: 6 --> 1,3085,3088
+1,3088,3113,146,121,0
+,,,,,,Switching Processes: 1 --> 5,3113,3116
+5,3116,3141,159,134,0
+,,,,,,Switching Processes: 5 --> 6,3141,3144
+6,3144,3169,364,339,0
+,,,,,,Switching Processes: 6 --> 1,3169,3172
+1,3172,3197,121,96,0
+,,,,,,Switching Processes: 1 --> 5,3197,3200
+5,3200,3225,134,109,0
+,,,,,,Switching Processes: 5 --> 6,3225,3228
+6,3228,3253,339,314,0
+,,,,,,Switching Processes: 6 --> 1,3253,3256
+1,3256,3281,96,71,0
+,,,,,,Switching Processes: 1 --> 5,3281,3284
+5,3284,3309,109,84,0
+,,,,,,Switching Processes: 5 --> 6,3309,3312
+6,3312,3337,314,289,0
+,,,,,,Switching Processes: 6 --> 1,3337,3340
+1,3340,3365,71,46,0
+,,,,,,Switching Processes: 1 --> 5,3365,3368
+5,3368,3393,84,59,0
+,,,,,,Switching Processes: 5 --> 6,3393,3396
+6,3396,3421,289,264,0
+,,,,,,Switching Processes: 6 --> 1,3421,3424
+1,3424,3449,46,21,0
+,,,,,,Switching Processes: 1 --> 5,3449,3452
+5,3452,3477,59,34,0
+,,,,,,Switching Processes: 5 --> 6,3477,3480
+6,3480,3505,264,239,0
+,,,,,,Switching Processes: 6 --> 1,3505,3508
+1,3508,3529,21,0,3529
+,,,,,,Process 1 finished
+,,,,,,Switching Processes: 1 --> 5,3529,3532
+5,3532,3557,34,9,0
+,,,,,,Switching Processes: 5 --> 6,3557,3560
+6,3560,3585,239,214,0
+,,,,,,Switching Processes: 6 --> 5,3585,3588
+5,3588,3597,9,0,3597
+,,,,,,Process 5 finished
+,,,,,,Switching Processes: 5 --> 6,3597,3600
+6,3600,3625,214,189,0
+6,3625,3650,189,164,0
+6,3650,3675,164,139,0
+6,3675,3700,139,114,0
+6,3700,3725,114,89,0
+6,3725,3750,89,64,0
+6,3750,3775,64,39,0
+6,3775,3800,39,14,0
+6,3800,3814,14,0,3814
+,,,,,,Process 6 finished
+
+,,,,,,Average Completion Time: 2603

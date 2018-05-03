@@ -6,6 +6,9 @@ public class Driver{
     public static final int SEARCH_DEPTH = 6;
 
     public static void main( String[] args ){
+
+
+
         Scanner in = new Scanner( System.in );
         Location inputMove = null, outputMove = null;
         char mySymbol = 'A';
