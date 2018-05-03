@@ -11,11 +11,8 @@ public class Scheduler {
       System.out.println("Invalid args; no test file name(s) provided.");
       System.exit(1);
     }
-
-    ArrayList<Process> processList = readFile(args[0]);
-    RoundRobin rr25 = new RoundRobin(processList, 25, args[0]);
-    rr25.run();
-    /*for (String fileName : args) {
+	
+    for (String fileName : args) {
       System.out.println("\nUsing file: " + fileName);
       ArrayList<Process> processList = readFile(fileName);
 
@@ -52,7 +49,7 @@ public class Scheduler {
       lottery.run();
 
       System.out.println("Lottery finished.");
-    }*/
+    }
     System.out.println("All files finished.");
   }
 
