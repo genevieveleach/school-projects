@@ -18,21 +18,11 @@
       <file leaf-file-name="SPPGauss.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SPPGauss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="57" column="3" lean-forward="true" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+            <state relative-caret-position="-13">
+              <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -58,8 +48,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/SPPGauss.java" />
         <option value="$PROJECT_DIR$/src/input.txt" />
+        <option value="$PROJECT_DIR$/src/SPPGauss.java" />
       </list>
     </option>
   </component>
@@ -262,7 +252,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525393552153</updated>
-      <workItem from="1525393554412" duration="14270000" />
+      <workItem from="1525393554412" duration="14857000" />
     </task>
     <task id="LOCAL-00001" summary="wrote program based on pseudocode; currently not working properly">
       <created>1525410707834</created>
@@ -278,11 +268,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525412943509</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="write input methods; input file should be in &quot;src&quot; directory">
+      <created>1525415890656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525415890656</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14270000" />
+    <option name="totallyTimeSpent" value="14857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -326,7 +323,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wrote program based on pseudocode; currently not working properly" />
     <MESSAGE value="renamed variables so they're easier to tell what they are in context" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed variables so they're easier to tell what they are in context" />
+    <MESSAGE value="write input methods; input file should be in &quot;src&quot; directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="write input methods; input file should be in &quot;src&quot; directory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,15 +366,15 @@
     <entry file="file://$PROJECT_DIR$/src/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SPPGauss.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="57" column="3" lean-forward="true" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+        <state relative-caret-position="-13">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
