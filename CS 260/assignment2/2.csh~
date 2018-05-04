@@ -1,0 +1,19 @@
+#!/bin/csh
+echo "Are you okay?"
+while ( 1 == 1 )
+set in = $<
+switch ( $in )
+case [Yy]:
+echo "glad to hear it"
+exit
+breaksw
+case [Nn]:
+echo "sorry that you are not feeling good"
+exit
+breaksw
+default:
+echo "Incorrect choice."
+echo "Are you okay?"
+set in = $<
+endsw
+end

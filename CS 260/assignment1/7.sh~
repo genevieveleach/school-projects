@@ -1,0 +1,7 @@
+#!/bin/sh
+#accepts command line arguments
+echo $1
+while shift;
+do
+    echo $*
+done

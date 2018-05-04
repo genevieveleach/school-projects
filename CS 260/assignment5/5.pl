@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+print "Please enter a color: ";
+my $in = <STDIN>;
+chomp($in);
+$_ = $in;
+if (/[Bb]l.*/)
+{
+    print "The sky color is $_\n"
+} elsif (/red/ || /yellow/)
+{
+    print "the sun is sometimes this color.\n"
+} else
+{
+    print "$_ is not in any of the categories defined.\n"
+}
