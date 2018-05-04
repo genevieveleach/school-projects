@@ -1,0 +1,6 @@
+#!/bin/csh
+set date = `date`
+set date = ( $date )
+foreach d ( $date )
+echo d
+end

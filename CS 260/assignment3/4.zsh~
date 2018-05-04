@@ -1,0 +1,5 @@
+#!/bin/zsh
+thedate=(`date`)
+for i in $thedate
+    echo $i
+done

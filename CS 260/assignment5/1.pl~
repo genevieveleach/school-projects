@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+print "Please enter a number.\n";
+my $input = <STDIN>;
+chomp($input);
+my $result = $input % 2;
+if ($result == 0)
+{
+    print "$input is even\n"
+} else
+{
+    print "'$input' is odd\n"
+}

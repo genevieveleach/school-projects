@@ -1,0 +1,41 @@
+#!/bin/zsh
+if [ $# -ne 2 ]
+then
+    echo "Wrong args. Please input 2 positive integers."
+    exit
+fi
+if [ $1 -lt 0 -o $2 -lt 0 ]
+then
+    echo "Integers must be positive. Please input 2 positive integers."
+    exit
+fi
+
+greater=$1
+lesser=$2
+if [ $1 -lt $2 ]
+then
+    greater=$2
+    lesser=$1
+fi
+
+num=$greater
+den=$lesser
+
+#GCD
+remain=`expr $num % $den`
+
+while [ $remain -ne 0 ]
+do
+    num=$den
+    den=$remain
+    remain=`expr $num \% $den`
+done
+
+gcd=$den
+
+#LCM
+lcm=`expr $greater \* $lesser`
+lcm=`expr $lcm / $gcd`
+
+echo "The GCD of $greater and $lesser is $gcd"
+echo "The LCM of $greater and $lesser is $lcm"

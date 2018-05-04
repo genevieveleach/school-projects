@@ -1,0 +1,4 @@
+#!/bin/zsh
+echo "Please enter a number."
+read in
+echo [ $in % 2 ]
