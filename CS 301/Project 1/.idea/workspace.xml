@@ -18,11 +18,21 @@
       <file leaf-file-name="SPPGauss.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SPPGauss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+            <state relative-caret-position="663">
+              <caret line="57" column="3" lean-forward="true" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,6 +59,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/SPPGauss.java" />
+        <option value="$PROJECT_DIR$/src/input.txt" />
       </list>
     </option>
   </component>
@@ -251,7 +262,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525393552153</updated>
-      <workItem from="1525393554412" duration="11312000" />
+      <workItem from="1525393554412" duration="14270000" />
     </task>
     <task id="LOCAL-00001" summary="wrote program based on pseudocode; currently not working properly">
       <created>1525410707834</created>
@@ -260,11 +271,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525410707834</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="renamed variables so they're easier to tell what they are in context">
+      <created>1525412943509</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525412943509</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11312000" />
+    <option name="totallyTimeSpent" value="14270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -307,11 +325,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wrote program based on pseudocode; currently not working properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote program based on pseudocode; currently not working properly" />
+    <MESSAGE value="renamed variables so they're easier to tell what they are in context" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed variables so they're easier to tell what they are in context" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -340,16 +359,24 @@
         <state relative-caret-position="195">
           <caret line="1236" column="25" lean-forward="false" selection-start-line="1236" selection-start-column="25" selection-end-line="1236" selection-end-column="25" />
           <folding>
-            <element signature="e#48572#48573#0" expanded="true" />
-            <element signature="e#48621#48622#0" expanded="true" />
+            <element signature="e#48572#48573#0" expanded="false" />
+            <element signature="e#48621#48622#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SPPGauss.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="663">
+          <caret line="57" column="3" lean-forward="true" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
