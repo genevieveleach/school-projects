@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 
 class NewtonRaphson extends Functions {
 
-  //TODO: clever checks in your program to be warned and stop if you have a divergent solution
   static void evaluate(double x, int nMax, double errorThreshold, double delta, int functionNum) {
     System.out.println("Newton-Raphson method for part " + functionNum);
     try {
@@ -17,6 +16,8 @@ class NewtonRaphson extends Functions {
     double fx;
     double fprimex;
     double error;
+    double lastError;
+    int divergentCount = 0;
 
     fx = f(x, functionNum);
     fprimex = fPrime(x, functionNum);
@@ -27,6 +28,7 @@ class NewtonRaphson extends Functions {
       e.printStackTrace();
     }
 
+    lastError = Double.MAX_VALUE;
     for(int i = 1; i < nMax; i++) {
       fprimex = fPrime(x, functionNum);
 
@@ -38,6 +40,16 @@ class NewtonRaphson extends Functions {
       error = fx/fprimex;
       x = x - error;
       fx = f(x, functionNum);
+
+      // if current is > than last 3 times in a row, solution is divergent for points chosen
+      if(Math.abs(error) > Math.abs(lastError)) {
+        divergentCount++;
+      } else if(divergentCount >= 3) {
+        System.out.println("Solution is divergent...\n");
+        return;
+      } else {
+        divergentCount = 0;
+      }
 
       try {
         writeDataToFile(i, x, fx, fprimex, error);

@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 
 class Bisection extends Functions {
 
-  //TODO: clever checks in your program to be warned and stop if you have a divergent solution
   static void evaluate(double a, double b, int nMax, double errorThreshold, int functionNum) {
     System.out.println("Bisection method for part " + functionNum);
     try {
@@ -19,6 +18,8 @@ class Bisection extends Functions {
     double fa;
     double fb;
     double fc;
+    double lastError;
+    int divergentCount = 0;
 
     fa = f(a, functionNum);
     fb = f(b, functionNum);
@@ -27,12 +28,22 @@ class Bisection extends Functions {
       System.out.println("f(a) and f(b) have same sign, no root...\n");
       return;
     }
-
+    lastError = Double.MAX_VALUE;
     error = b-a;
     for (int i = 0; i < nMax; i++) {
       error = error/2;
       c = a + error;
       fc = f(c, functionNum);
+
+      // if current is > than last 3 times in a row, solution is divergent for points chosen
+      if(Math.abs(error) > Math.abs(lastError)) {
+        divergentCount++;
+      } else if(divergentCount >= 3) {
+        System.out.println("Solution is divergent...\n");
+        return;
+      } else {
+        divergentCount = 0;
+      }
 
       try {
         writeDataToFile(i, a, b, c, fa, fb, fc, error);
@@ -52,6 +63,7 @@ class Bisection extends Functions {
         a = c;
         fa = fc;
       }
+      lastError = error;
     }
 
     System.out.println("Does not converge after " + nMax + "iterations...\n");

@@ -16,6 +16,8 @@ class Secant extends Functions {
     double fa;
     double fb;
     double d;
+    double lastD;
+    int divergentCount = 0;
 
     fa = f(a, functionNum);
     fb = f(b, functionNum);
@@ -36,6 +38,7 @@ class Secant extends Functions {
       e.printStackTrace();
     }
 
+    lastD = Double.MAX_VALUE;
     for (int i = 2; i < nMax; i++) {
       if(Math.abs(fa) > Math.abs(fb)) {
         double temp = a;
@@ -59,11 +62,23 @@ class Secant extends Functions {
       a -= d;
       fa = f(a, functionNum);
 
+      // if current is > than last 3 times in a row, solution is divergent for points chosen
+      if(Math.abs(d) > Math.abs(lastD)) {
+        divergentCount++;
+      } else if(divergentCount >= 3) {
+        System.out.println("Solution is divergent...\n");
+        return;
+      } else {
+        divergentCount = 0;
+      }
+
       try {
         writeDataToFile(i, a, fa, d);
       } catch (IOException e) {
         e.printStackTrace();
       }
+
+      lastD = d;
     }
 
     System.out.println("Does not converge after " + nMax + "iterations...\n");

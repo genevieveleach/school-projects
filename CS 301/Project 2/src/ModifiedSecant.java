@@ -18,13 +18,26 @@ class ModifiedSecant extends Functions {
     double fxplusdeltax;
     double xnplus1;
     double error;
+    double lastError;
+    int divergentCount = 0;
 
+    lastError = Double.MAX_VALUE;
     for (int i = 0; i < nMax; i++) {
       fx = f(x, functionNum);
       deltax = delta * x;
       fxplusdeltax = f((x + deltax), functionNum);
 
       error = fx * (deltax / (fxplusdeltax - fx));
+
+      // if current is > than last 3 times in a row, solution is divergent for points chosen
+      if(Math.abs(error) > Math.abs(lastError)) {
+        divergentCount++;
+      } else if(divergentCount >= 3) {
+        System.out.println("Solution is divergent...\n");
+        return;
+      } else {
+        divergentCount = 0;
+      }
 
       if(Math.abs(error) < errorThreshold) {
         System.out.println("Converges at " + x + ".\n");
@@ -40,6 +53,7 @@ class ModifiedSecant extends Functions {
       }
 
       x = xnplus1;
+      lastError = error;
     }
     System.out.println("Does not converge after " + nMax + " iterations...\n");
 
