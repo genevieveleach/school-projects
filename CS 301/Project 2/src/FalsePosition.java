@@ -20,8 +20,8 @@ class FalsePosition extends Functions {
     double fb;
     double fc;
 
-    fa= f(a, functionNum);
-    fb= f(b, functionNum);
+    fa = f(a, functionNum);
+    fb = f(b, functionNum);
 
     if (Math.signum(fa) == Math.signum(fb)) {
       System.out.println("f(a) and f(b) have same sign, no root...");
@@ -60,14 +60,14 @@ class FalsePosition extends Functions {
   }
 
   private static void writeDataToFile(int n, double a, double b, double c, double fa, double fb, double fc, double error) throws IOException {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../output/FalsePositionResults.csv")), true);
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output/FalsePositionResults.csv", true)));
     out.println(n + "," + a + "," + b + "," + c + "," + fa + "," + fb + "," + fc + "," + error);
     out.close();
   }
 
   private static void writeHeaderToFile(int functionNum) throws IOException {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../output/FalsePositionResults.csv")));
-    out.println("n,a,b,c,f(a),f(b),f(c),ε,Function: " + functionNum);
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output/FalsePositionResults.csv", true)));
+    out.println("n,a,b,c,f(a),f(b),f(c),Error,Function: " + functionNum);
     out.close();
   }
 }

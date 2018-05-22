@@ -55,14 +55,14 @@ class NewtonRaphson extends Functions {
   }
 
   private static void writeDataToFile(int n, double x, double fx, double fprimex, double error) throws IOException {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../output/NewtonResults.csv")),true);
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output/NewtonResults.csv", true)));
     out.println(n + "," + x + "," + fx + "," + fprimex + "," + error);
     out.close();
   }
 
   private static void writeHeaderToFile(int functionNum) throws IOException {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../output/FalsePositionResults.csv")));
-    out.println("n,x,f(x),f'(x),ε,Function: " + functionNum);
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output/NewtonResults.csv", true)));
+    out.println("n,x,f(x),f'(x),Error,Function: " + functionNum);
     out.close();
   }
 }
