@@ -24,7 +24,7 @@ class Bisection extends Functions {
     fb = f(b, functionNum);
 
     if (Math.signum(fa) == Math.signum(fb)) {
-      System.out.println("f(a) and f(b) have same sign, no root...");
+      System.out.println("f(a) and f(b) have same sign, no root...\n");
       return;
     }
 

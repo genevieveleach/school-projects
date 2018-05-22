@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -34,12 +32,20 @@ public class Driver {
     Secant.evaluate(1, 2, nMax, ea, 1);
     Secant.evaluate(3, 4, nMax, ea, 1);
 
-/*    ModifiedSecant.evaluate();
-    ModifiedSecant.evaluate();
-    ModifiedSecant.evaluate();*/
+    ModifiedSecant.evaluate(0.5, nMax, ea, delta, 1);
+    ModifiedSecant.evaluate(1.5, nMax, ea, delta, 1);
+    ModifiedSecant.evaluate(3, nMax, ea, delta, 1);
 
     // part b
+    Bisection.evaluate(120, 130, nMax, ea, 2);
 
+    FalsePosition.evaluate(120, 130, nMax, ea, 2);
+
+    NewtonRaphson.evaluate(120, nMax, ea, delta, 2);
+
+    Secant.evaluate(120, 130, nMax, ea, 2);
+
+    ModifiedSecant.evaluate(120, nMax, ea, delta, 2);
   }
 
   private static void clearFiles() throws FileNotFoundException {
